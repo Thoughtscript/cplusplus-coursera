@@ -15,7 +15,7 @@ Some personal C++ notes.
 
 There are no interfaces or abstract classes in C++. Consider:
 
- - `filename.h` a class definition that’s pre-compiled (since it's not likely to change) .
+ - `filename.h` a class definition that’s pre-compiled (since it's not likely to change).
  - `filename.cpp` the implementation of that class definition (with full method definitions/implementations).
 
 `::` is the scope resolution operator and defines the implemented methods of the class definition. 
@@ -33,8 +33,8 @@ There are no interfaces or abstract classes in C++. Consider:
 int num = 0;
 ```
 
-* ***Variables*** hold values
-* ***Reference operator*** gets the ***address*** from a ***variable*** holding a ***value***
+* ***Variables*** hold ***values***.
+* ***Reference operator*** gets the ***address*** from a ***variable*** holding a ***value***.
 
 ```c++
 &num //address of value of num
