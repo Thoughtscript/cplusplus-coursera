@@ -1,4 +1,3 @@
-// my_class.h
 namespace ExampleNamespace
 {
     class example_class
