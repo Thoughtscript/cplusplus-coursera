@@ -24,7 +24,8 @@ There are no interfaces or abstract classes in C++. Consider:
 
 ### Garbage Collection
 
-No auto GC, null out variables when done
+* No automatic garbace collection (like in Java) - variables are not removed from memory automatically.
+* Null out variables when done.
 
 ### Pointers and References
 
