@@ -18,13 +18,13 @@ There are no interfaces or abstract classes in C++. Consider:
  - `filename.h` a class definition that’s pre-compiled (since it's not likely to change).
  - `filename.cpp` the implementation of that class definition (with full method definitions/implementations).
 
-`::` is the scope resolution operator and defines the implemented methods of the class definition. 
+`::` is the scope **resolution operator** and defines the implemented methods of the class definition. 
 
 `:` is the subclassing operator (equivalent of extends in Java). 
 
 ### Garbage Collection
 
-* No automatic garbace collection (like in Java) - variables are not removed from memory automatically.
+* No automatic garbage collection (like in Java) - variables are not removed from memory automatically.
 * Null out variables when done.
 
 ### Pointers and References
