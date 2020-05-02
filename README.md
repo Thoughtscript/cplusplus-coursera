@@ -11,6 +11,10 @@ Coures and general C++ notes.
 
 Some personal C++ notes.
 
+Great resources:
+
+1. [learncpp](https://www.learncpp.com)
+
 ### Files and OOD
 
 There are no interfaces or abstract classes in C++. Consider:
