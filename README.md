@@ -1,19 +1,35 @@
 # cplusplus-coursera
 
-Coures and general C++ notes.
+Course and general C++ notes.
 
 ## Contents
+
+Some personal C++ notes:
 
 * Coursework examples are contained in here.
 * General learning samples are too!
 
-## Comments
+## Use
 
-Some personal C++ notes.
+C++ version used:
 
-Great resources:
+```Bash
+$ gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
+Apple clang version 11.0.0 (clang-1100.0.33.16)
+Target: x86_64-apple-darwin19.4.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+```
 
-1. [learncpp](https://www.learncpp.com)
+CMake version:
+
+```Bash
+$ cmake --version
+cmake version 3.16.6
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+```
 
 ### Files and OOD
 
@@ -72,3 +88,10 @@ Can be declared in classes (for encapsulated class fields) using the following:
 public:
 //declarations here
 ```
+
+## Comments
+
+Great resources:
+
+1. [learncpp](https://www.learncpp.com)
+1. [cppreference](https://en.cppreference.com/w/cpp/language/try_catch)
