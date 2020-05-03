@@ -1,6 +1,8 @@
 # cplusplus-coursera
 
-Course and general C++ notes.
+Personal course and general C++ notes for [Coursera - UI UC: Object-Oriented Data Structures in C++](https://www.coursera.org/learn/cs-fundamentals-1/home/).
+
+> [Official course repository](https://github.com/wadefagen/coursera)
 
 ## Contents
 
@@ -8,6 +10,7 @@ Some personal C++ notes:
 
 * Coursework examples are contained in here.
 * General learning samples are too!
+* Experimenting with syntax and file structures.
 
 ## Use
 
@@ -93,5 +96,6 @@ public:
 
 Great resources:
 
+1. [Official course repository](https://github.com/wadefagen/coursera)
 1. [learncpp](https://www.learncpp.com)
 1. [cppreference](https://en.cppreference.com/w/cpp/language/try_catch)
