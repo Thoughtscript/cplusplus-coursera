@@ -83,6 +83,8 @@ int* pointer_num = &num; //address of value of num
 cout << “hello world”;
 ```
 
+* **Note** that the `<<` operator is the ***concatenation operator*** (`.` or `+` in other languages).
+
 ### Access modifiers
 
 Can be declared in classes (for encapsulated class fields) using the following:
