@@ -8,11 +8,11 @@ int main() {
         std::cout << "Float " << x << '\n';
 
         // declare floating point precision to seven
-        // Note that this will round to precision 5
+        // Note that this will round to precision five
         float y(1.0100290808);
         std::cout << "Float rounded to precision 5: " << y << '\n';
 
-        // declare double point precision to four - it will round to nearest integer dropping precision
+        // declare double point precision to five
         double z(1.00013);
         std::cout << "Double " << z << '\n';
         z = 0.0000;
