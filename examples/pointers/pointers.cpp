@@ -21,7 +21,7 @@ int main()
         std::cout << "*numAddress " << *numAddress << std::endl;
 
         // heap example
-        // declare a pointer variable and allocated a memory address in heap
+        // declare a pointer variable and allocate a memory address in heap
         int * heapVariable = (int*) malloc(1);
         // assign a value to the pointer variable that doesn't exceed the specified size
         heapVariable[0] = 45;
