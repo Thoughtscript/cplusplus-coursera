@@ -27,6 +27,7 @@ int main() {
         exampleTwo.num = 54;
         exampleTwo.exampleMethodTwo();
         cout << exampleTwo.num << endl;
+
     } catch (const std::exception &e) {
         std::cout << e.what() << std::endl;
     }
