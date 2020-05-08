@@ -49,7 +49,7 @@ There are no interfaces or abstract classes in C++. Consider:
 
 * No automatic garbage collection (like in Java) - variables are not automatically removed from memory.
 * Unlike Java, C++ distinguishes between **heap** and **stack** memory. In Java, all memory is allocated and automatically garbage collected in the **heap**.
-* C++ will automatically clear stack memory and variables  (e.g. - variables within the scope of a completed function will be removed from the stack).
+* C++ will automatically clear **stack** memory and variables  (e.g. - variables within the scope of a completed function will be removed from the **stack**).
 * For **heap**  memory (memory that persists longer than the lifespan of a specific function), using `delete`, `free()`, `malloc()`, etc. is required.
 
 ### Pointers and References
@@ -84,6 +84,8 @@ int* pointer_num = &num; //address of value of num
 ```c++
 cout << “hello world”;
 ```
+
+* **Note** that the `<<` operator is the ***concatenation operator*** (`.` or `+` in other languages).
 
 ### Access modifiers
 
