@@ -11,6 +11,7 @@ Some personal C++ notes:
 * Coursework examples are contained in here.
 * General learning samples are too!
 * Experimenting with syntax and file structures.
+* Wrapping my mind around some C++ insanity.
 
 ## Use
 
@@ -33,6 +34,8 @@ cmake version 3.16.6
 
 CMake suite maintained and supported by Kitware (kitware.com/cmake).
 ```
+
+> **One Huge Difference:** C++ programs will execute even if they don't compile!
 
 ### Files and OOD
 
@@ -65,7 +68,9 @@ int num = 0;
 &num //address of value of num
 ```
 
-* ***Pointer variables*** hold (the) ***addresses*** (of ***values***).
+* ***Pointer variables*** hold ***addresses***.
+
+* **Note:** The `&` symbol can also be used in variable declaration to essentially create another name or alias for a variable already declared.
 
 ```c++
 int* pointer_num = &num; //address of value of num
@@ -85,7 +90,7 @@ int* pointer_num = &num; //address of value of num
 cout << “hello world”;
 ```
 
-* **Note** that the `<<` operator is the ***concatenation operator*** (`.` or `+` in other languages).
+* **Note** that the `<<` operator is the ***concatenation operator*** (`.` or `+` in other languages) it's outputs data to the console. `>>` receives data (from say `cin`).
 
 ### Access modifiers
 

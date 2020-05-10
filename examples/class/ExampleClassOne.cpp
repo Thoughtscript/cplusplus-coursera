@@ -19,6 +19,7 @@ void ExampleClassTwo::exampleMethodTwo() {
 int main() {
     try {
         ExampleClassOne exampleOne;
+        cout << "See the random number assigned here: " << exampleOne.num << endl;
         exampleOne.num = 2;
         exampleOne.exampleMethodOne();
         cout << exampleOne.num << endl;

@@ -19,19 +19,30 @@ int main()
         std::cout << "numAddress " << numAddress << std::endl;
         std::cout << "*numAddress " << *numAddress << std::endl;
 
-        // -------------------  heap example #1  -------------------
+        // ------------------- Reference variables -------------------
+        int & refVar = derefNum;
+        std::cout << "refVar to derefNum " << refVar << std::endl;
+
+        // ------------------- heap example #1 -------------------
+        // declare a pointer variable using new keyword - which automatically (always) assigns memory to the heap
+        int * exampleA = new int;
+        std::cout << "Initialized to last value on heap: " << exampleA << " " << *exampleA << std::endl;
+        delete exampleA;
+
+        // -------------------  heap example #2  -------------------
         // declare a pointer variable and allocate a memory address in heap
         int * heapVariable = (int*) malloc(1);
         // assign a value to the pointer variable that doesn't exceed the specified size
         heapVariable[0] = 45;
-        std::cout << "heap assigned value " << heapVariable[0] << std::endl;
-        std::cout << "heap pointer variable / address " << heapVariable << std::endl;
+        std::cout << "Heap assigned value " << heapVariable[0] << std::endl;
+        std::cout << "Heap pointer variable / address " << heapVariable << std::endl;
         // return the allocated memory block back to the heap
         free(heapVariable);
 
-        // ------------------- heap example #2 -------------------
-        // declare a pointer variable using new keyword
+        // ------------------- heap example #3 -------------------
+        // declare a pointer variable using new keyword - which automatically assigns memory to the heap
         int * newVar = new int;
+        std::cout << "Note the value initialized to is " << newVar << " " << *newVar << std::endl;
         *newVar = 1000;
         std::cout << "newVar " << *newVar << " at " << newVar << std::endl;
         // declare a pointer variable assigning NULL
