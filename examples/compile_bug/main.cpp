@@ -7,7 +7,7 @@ int *example_pointer_method() {
     int &j = i;
     std::cout << j << '\n';
 
-    // This is not syntactically valid since it returns a stack address out of stack.
+    // This is not valid since it returns a stack address out of stack.
     return &i;
 }
 
