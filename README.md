@@ -44,16 +44,16 @@ There are no interfaces or abstract classes in C++. Consider:
  - `filename.h` a class definition that’s pre-compiled (since it's not likely to change).
  - `filename.cpp` the implementation of that class definition (with full method definitions/implementations).
 
-`::` is the scope **resolution operator** and defines the implemented methods of the class definition. 
-
-`:` is the subclassing operator (equivalent of extends in Java). 
+`::` is the scope **resolution operator** and defines the implemented methods of the class definition.  
+`:` is the subclassing operator (equivalent of extends in Java).   
 
 ### Garbage Collection
 
 * No automatic garbage collection (like in Java) - variables are not automatically removed from memory.
 * Unlike Java, C++ distinguishes between **heap** and **stack** memory. In Java, all memory is allocated and automatically garbage collected in the **heap**.
 * C++ will automatically clear **stack** memory and variables  (e.g. - variables within the scope of a completed function will be removed from the **stack**).
-* For **heap**  memory (memory that persists longer than the lifespan of a specific function), using `delete`, `free()`, `malloc()`, etc. is required.
+* For **heap**  memory (memory that persists longer than the lifespan of a specific function), using `delete`, `free()`, `malloc()`, etc. is required. 
+* Use `new` to allocate memory to **heap** and **delete** to remove (recommended). Use `new` if a variable must be passed between functions.
 
 ### Pointers and References
 
