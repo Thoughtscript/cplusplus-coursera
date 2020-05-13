@@ -101,6 +101,28 @@ public:
 //declarations here
 ```
 
+### Class object assignments
+
+Remember that objects created in the **Stack** do not automatically persist in the **Heap**. One illuminating topic is how objects in two distinct functions can be assigned.
+
+```C++
+ExampleClass methodOne() {  
+    ExampleClass ec;
+    return ec;  
+}
+
+int main() {  
+    ExampleClass ecc;
+    ecc = methodOne();  
+}
+```
+
+Will the above throw an error? No, the following process is performed:
+
+1. Default constructor called in both `methodOne()` (for `ec`) and `main()` (for `ecc`).
+1. Copy constructor is called when returning `methodOne()` (this link two discrete events on the **Stack**).
+1. Assignment operator is called to copy the "innards" from `ec` to `ecc` (values are copied from `ec` to `ecc`).
+
 ## Comments
 
 Great resources:
@@ -110,3 +132,4 @@ Great resources:
 1. [cppreference](https://en.cppreference.com/w/cpp/language/try_catch)
 1. [cplusplus](http://www.cplusplus.com/reference/cstdlib/malloc/)
 1. [inf.ethz.ch](https://inf.ethz.ch/personal/gonnet/DarwinManual/node35.html)
+1. [cplusplus](http://www.cplusplus.com/articles/y8hv0pDG/)
