@@ -8,5 +8,5 @@ using namespace std;
 // implement class method without class syntax here
 void ExampleNamespace::ExampleClass::exampleMethod() {
     a = 5;
-    std::cout << "I'm a console out message from ExampleClassOne exampleMethodOne()" << endl;
+    std::cout << "I'm a console out message from ExampleClass exampleMethod()" << endl;
 }
