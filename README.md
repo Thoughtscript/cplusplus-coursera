@@ -4,6 +4,8 @@ Personal course and general C++ notes for [Coursera - UI UC: Object-Oriented Dat
 
 > [Official course repository](https://github.com/wadefagen/coursera)
 
+> **DO NOT:** use these files unethically (to plagiarise, etc. in tests). However, feel free to use them for your own review.
+
 ## Contents
 
 Some personal C++ notes:
