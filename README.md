@@ -1,6 +1,6 @@
 # cplusplus-coursera
 
-Personal course and general C++ notes for [Coursera - UI UC: Object-Oriented Data Structures in C++](https://www.coursera.org/learn/cs-fundamentals-1/home/).
+Personal course and general C++ notes for [Coursera - UI UC: Object-Oriented Data Structures in C++](https://www.coursera.org/learn/cs-fundamentals-1/home/) and Accelerated CS Fundamentals Specialization.
 
 > [Official course repository](https://github.com/wadefagen/coursera)
 
