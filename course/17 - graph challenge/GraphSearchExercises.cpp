@@ -56,22 +56,6 @@ int GridGraph::countEdges() const {
   // TODO: Your code here!
   // =======================================================================
 
-  /**
-  std::unordered_set<IntPairPair> edgeSet;
-  for (auto pair : adjacencyMap) {
-        auto firstOfPair = pair.first;
-        auto secondOfPair = pair.first;
-        IntPairPair edge;
-        if (firstOfPair > secondOfPair) {
-            edge = std::make_pair(firstOfPair,secondOfPair);
-        } else {
-            edge = std::make_pair(secondOfPair,firstOfPair);
-        }
-        edgeSet.insert(edge);
-  }
-  return edgeSet.size() ;
-  */
-
   numEdges = adjacencyMap.size() - 1;
   return numEdges;
 }
@@ -113,7 +97,7 @@ void GridGraph::removePoint(const IntPair& p1) {
   // TODO: Your code here!
   // =======================================================================
   for (auto neighbor : originalNeighbors) {
-      adjacencyMap.erase(neighbor);
+      adjacencyMap[neighbor].erase(p1);
   }
 
   // Finally, for the one point we are removing, erase the point key itself
