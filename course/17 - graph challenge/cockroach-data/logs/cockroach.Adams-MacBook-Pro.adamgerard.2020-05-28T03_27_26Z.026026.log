@@ -1,0 +1,616 @@
+I200528 03:27:26.959494 1 util/log/sync_buffer.go:70  [config] file created at: 2020/05/28 03:27:26
+I200528 03:27:26.959494 1 util/log/sync_buffer.go:70  [config] running on machine: Adams-MacBook-Pro
+I200528 03:27:26.959494 1 util/log/sync_buffer.go:70  [config] binary: CockroachDB CCL v20.1.1 (x86_64-apple-darwin14, built 2020/05/19 14:40:33, go1.13.9)
+I200528 03:27:26.959494 1 util/log/sync_buffer.go:70  [config] arguments: [cockroach start --insecure]
+I200528 03:27:26.959494 1 util/log/sync_buffer.go:70  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I200528 03:27:26.959493 1 cli/start.go:1223  logging to directory /Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data/logs
+W200528 03:27:26.960307 1 cli/start.go:1272  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v20.1/secure-a-cluster.html
+W200528 03:27:26.960695 1 cli/start.go:1144  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (4.0 GiB).
+I200528 03:27:26.960725 1 cli/start.go:1286  CockroachDB CCL v20.1.1 (x86_64-apple-darwin14, built 2020/05/19 14:40:33, go1.13.9)
+W200528 03:27:26.961371 1 cli/start.go:548  running 'cockroach start' without --join is deprecated.
+Consider using 'cockroach start-single-node' or 'cockroach init' instead.
+I200528 03:27:26.964086 1 server/config.go:404  system total memory: 16 GiB
+I200528 03:27:26.964121 1 server/config.go:406  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   4.0 GiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I200528 03:27:26.964161 1 cli/start.go:1129  process identity: uid 501 euid 501 gid 20 egid 20
+I200528 03:27:26.965099 1 cli/start.go:697  starting cockroach node
+I200528 03:27:27.157110 14 storage/rocksdb.go:606  opening rocksdb instance at "/Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data/cockroach-temp903453457"
+I200528 03:27:27.226010 14 server/server.go:1065  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I200528 03:27:27.228038 14 storage/rocksdb.go:606  opening rocksdb instance at "/Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data"
+I200528 03:27:27.235657 14 server/config.go:578  [n?] 1 storage engine initialized
+I200528 03:27:27.235672 14 server/config.go:581  [n?] RocksDB cache size: 128 MiB
+I200528 03:27:27.235683 14 server/config.go:581  [n?] store 0: RocksDB, max size 0 B, max open file limit 10000
+I200528 03:27:27.238860 14 server/server.go:1520  [n?] no stores bootstrapped and --join flag specified, awaiting init command or join with an already initialized node.
+I200528 03:27:27.238890 14 server/server.go:1530  [n?] **** add additional nodes by specifying --join=Adams-MacBook-Pro.local:26257
+W200528 03:27:27.239554 48 cli/start.go:1068  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "Adams-MacBook-Pro.local" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I200528 03:27:27.253247 14 server/node.go:324  [n?] **** cluster db1bfead-7d66-4938-9df2-284973c7029e has been created
+I200528 03:27:27.265232 14 gossip/gossip.go:395  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"Adams-MacBook-Pro.local:26257" > attrs:<> locality:<> ServerVersion:<major_val:20 minor_val:1 patch:0 unstable:0 > build_tag:"v20.1.1" started_at:1590636447265066000 cluster_name:"" sql_address:<network_field:"tcp" address_field:"Adams-MacBook-Pro.local:26257" > 
+I200528 03:27:27.279560 14 server/node.go:428  [n1] initialized store [n1,s1]: disk (capacity=234 GiB, available=98 GiB, used=78 KiB, logicalBytes=16 KiB), ranges=32, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=166.00 pMax=13304.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I200528 03:27:27.279648 14 kv/kvserver/stores.go:247  [n1] read 0 node addresses from persistent storage
+W200528 03:27:27.280061 195 kv/kvserver/store.go:1627  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I200528 03:27:27.280071 14 server/node.go:649  [n1] connecting to gossip network to verify cluster ID...
+I200528 03:27:27.280086 14 server/node.go:669  [n1] node connected via gossip and verified as part of cluster "db1bfead-7d66-4938-9df2-284973c7029e"
+I200528 03:27:27.280143 14 server/node.go:512  [n1] node=1: started with [<no-attributes>=/Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data] engine(s) and attributes []
+I200528 03:27:27.282770 207 sql/temporary_schema.go:452  [n1] skipping temporary object cleanup run as it is not the leaseholder
+I200528 03:27:27.283083 207 sql/temporary_schema.go:453  [n1] completed temporary object cleanup job
+I200528 03:27:27.283103 207 sql/temporary_schema.go:575  [n1] temporary object cleaner next scheduled to run at 2020-05-28 03:57:27.280513 +0000 UTC
+I200528 03:27:27.289414 14 server/server.go:1636  [n1] starting http server at [::]:8080 (use: Adams-MacBook-Pro.local:8080)
+I200528 03:27:27.289441 14 server/server.go:1643  [n1] starting grpc/postgres server at [::]:26257
+I200528 03:27:27.289452 14 server/server.go:1644  [n1] advertising CockroachDB node at Adams-MacBook-Pro.local:26257
+I200528 03:27:27.371986 49 sql/event_log.go:132  [n1,intExec=optInToDiagnosticsStatReporting] Event: "set_cluster_setting", target: 0, info: {SettingName:diagnostics.reporting.enabled Value:true User:root}
+I200528 03:27:27.381848 294 sql/event_log.go:132  [n1,intExec=set-setting] Event: "set_cluster_setting", target: 0, info: {SettingName:version Value:20.1 User:root}
+I200528 03:27:27.395531 724 sql/event_log.go:132  [n1,intExec=initializeClusterSecret] Event: "set_cluster_setting", target: 0, info: {SettingName:cluster.secret Value:638b5ec4-2ad2-40a2-89a0-7e8794571965 User:root}
+I200528 03:27:27.399708 752 sql/event_log.go:132  [n1,intExec=create-default-db] Event: "create_database", target: 50, info: {DatabaseName:defaultdb Statement:CREATE DATABASE IF NOT EXISTS defaultdb User:root}
+I200528 03:27:27.402359 820 sql/event_log.go:132  [n1,intExec=create-default-db] Event: "create_database", target: 51, info: {DatabaseName:postgres Statement:CREATE DATABASE IF NOT EXISTS postgres User:root}
+I200528 03:27:27.415205 14 server/server.go:1777  [n1] done ensuring all necessary migrations have run
+I200528 03:27:27.415228 14 server/server.go:2019  [n1] serving sql connections
+I200528 03:27:27.415257 984 sqlmigrations/migrations.go:668  [n1] starting wait for upgrade finalization before schema change job migration
+I200528 03:27:27.415313 14 cli/start.go:857  [config] clusterID: db1bfead-7d66-4938-9df2-284973c7029e
+I200528 03:27:27.415331 14 cli/start.go:866  node startup completed:
+CockroachDB node starting at 2020-05-28 03:27:27.415252 +0000 UTC (took 0.5s)
+build:               CCL v20.1.1 @ 2020/05/19 14:40:33 (go1.13.9)
+webui:               http://Adams-MacBook-Pro.local:8080
+sql:                 postgresql://root@Adams-MacBook-Pro.local:26257?sslmode=disable
+RPC client flags:    cockroach <client cmd> --host=Adams-MacBook-Pro.local:26257 --insecure
+logs:                /Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data/logs
+temp dir:            /Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data/cockroach-temp903453457
+external I/O path:   /Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data/extern
+store[0]:            path=/Users/adamgerard/Desktop/Workspace/_code/cplusplus-coursera/course/17 - graph challenge/cockroach-data
+storage engine:      rocksdb
+status:              initialized new cluster
+clusterID:           db1bfead-7d66-4938-9df2-284973c7029e
+nodeID:              1
+I200528 03:27:27.415387 984 sqlmigrations/migrations.go:700  [n1] starting schema change job migration
+I200528 03:27:27.417459 985 sql/event_log.go:132  [n1] Event: "node_join", target: 1, info: {Descriptor:{NodeID:1 Address:Adams-MacBook-Pro.local:26257 Attrs: Locality: ServerVersion:20.1 BuildTag:v20.1.1 StartedAt:1590636447265066000 LocalityAddress:[] ClusterName: SQLAddress:Adams-MacBook-Pro.local:26257} ClusterID:db1bfead-7d66-4938-9df2-284973c7029e StartedAt:1590636447265066000 LastUp:1590636447265066000}
+I200528 03:27:27.417646 982 server/server_update.go:55  [n1] no need to upgrade, cluster already at the newest version
+I200528 03:27:27.450595 984 sqlmigrations/migrations.go:1124  [schema-change-job-migration] evaluating tables for creating jobs
+I200528 03:27:27.450618 984 sqlmigrations/migrations.go:719  [n1] schema change job migration completed
+I200528 03:27:29.480688 46 gossip/gossip.go:1527  [n1] node has connected to cluster via gossip
+I200528 03:27:29.480921 46 kv/kvserver/stores.go:266  [n1] wrote 0 node addresses to persistent storage
+I200528 03:27:33.308011 1207 kv/kvserver/replica_consistency.go:255  [n1,consistencyChecker,s1,r4/1:/System{/tsd-tse}] triggering stats recomputation to resolve delta of {ContainsEstimates:1436 LastUpdateNanos:1590636447345335000 IntentAge:0 GCBytesAge:0 LiveBytes:-35109 LiveCount:-691 KeyBytes:-33614 KeyCount:-691 ValBytes:-1495 ValCount:-691 IntentBytes:0 IntentCount:0 SysBytes:0 SysCount:0}
+W200528 03:27:37.291760 209 server/status/runtime.go:420  [n1] unable to get file descriptor usage (will not try again): not implemented on darwin
+I200528 03:27:37.305588 209 server/status/runtime.go:498  [n1] runtime stats: 84 MiB RSS, 183 goroutines, 66 MiB/54 MiB/82 MiB GO alloc/idle/total, 14 MiB/22 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (8x), 54 KiB/933 KiB (r/w)net
+I200528 03:27:47.285542 203 kv/kvserver/store.go:2470  [n1,s1] sstables (read amplification = 0):
+I200528 03:27:47.285661 203 kv/kvserver/store.go:2471  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uptime(secs): 20.1 total, 20.1 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200528 03:27:47.304622 209 server/status/runtime.go:498  [n1] runtime stats: 144 MiB RSS, 187 goroutines, 83 MiB/98 MiB/130 MiB GO alloc/idle/total, 14 MiB/23 MiB CGO alloc/total, 100.8 CGO/sec, 3.0/1.0 %(u/s)time, 0.0 %gc (2x), 13 MiB/14 MiB (r/w)net
+I200528 03:27:57.308550 209 server/status/runtime.go:498  [n1] runtime stats: 147 MiB RSS, 187 goroutines, 95 MiB/87 MiB/132 MiB GO alloc/idle/total, 15 MiB/23 MiB CGO alloc/total, 88.9 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 102 KiB/1.1 MiB (r/w)net
+I200528 03:28:07.310898 209 server/status/runtime.go:498  [n1] runtime stats: 150 MiB RSS, 188 goroutines, 104 MiB/79 MiB/139 MiB GO alloc/idle/total, 15 MiB/24 MiB CGO alloc/total, 45.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 114 KiB/674 KiB (r/w)net
+I200528 03:28:17.318382 209 server/status/runtime.go:498  [n1] runtime stats: 151 MiB RSS, 187 goroutines, 113 MiB/70 MiB/141 MiB GO alloc/idle/total, 15 MiB/24 MiB CGO alloc/total, 30.5 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 98 KiB/370 KiB (r/w)net
+I200528 03:28:27.282367 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+I200528 03:28:27.319308 209 server/status/runtime.go:498  [n1] runtime stats: 154 MiB RSS, 188 goroutines, 124 MiB/60 MiB/142 MiB GO alloc/idle/total, 15 MiB/24 MiB CGO alloc/total, 74.1 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 1.8 MiB/863 KiB (r/w)net
+I200528 03:28:37.328736 209 server/status/runtime.go:498  [n1] runtime stats: 160 MiB RSS, 186 goroutines, 54 MiB/126 MiB/149 MiB GO alloc/idle/total, 15 MiB/24 MiB CGO alloc/total, 30.4 CGO/sec, 0.9/0.4 %(u/s)time, 0.0 %gc (1x), 68 KiB/935 KiB (r/w)net
+I200528 03:28:46.621369 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_database", target: 52, info: {DatabaseName:movr Statement:CREATE DATABASE IF NOT EXISTS movr User:root}
+I200528 03:28:46.633720 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 53, info: {TableName:movr.public.users Statement:CREATE TABLE IF NOT EXISTS users (id UUID NOT NULL, city VARCHAR NOT NULL, name VARCHAR NULL, address VARCHAR NULL, credit_card VARCHAR NULL, PRIMARY KEY (city ASC, id ASC)) User:root}
+I200528 03:28:46.635270 2175 kv/kvserver/replica_command.go:397  [n1,split,s1,r32/1:/{Table/36-Max}] initiating a split of this range at key /Table/53 [r33] (zone config)
+I200528 03:28:46.637933 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 54, info: {TableName:movr.public.vehicles Statement:CREATE TABLE IF NOT EXISTS vehicles (id UUID NOT NULL, city VARCHAR NOT NULL, type VARCHAR NULL, owner_id UUID NULL, creation_time TIMESTAMP NULL, status VARCHAR NULL, current_location VARCHAR NULL, ext JSONB NULL, PRIMARY KEY (city ASC, id ASC), INDEX vehicles_auto_index_fk_city_ref_users (city ASC, owner_id ASC)) User:root}
+I200528 03:28:46.640430 2471 kv/kvserver/replica_command.go:397  [n1,split,s1,r33/1:/{Table/53-Max}] initiating a split of this range at key /Table/54 [r34] (zone config)
+I200528 03:28:46.642658 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 55, info: {TableName:movr.public.rides Statement:CREATE TABLE IF NOT EXISTS rides (id UUID NOT NULL, city VARCHAR NOT NULL, vehicle_city VARCHAR NULL, rider_id UUID NULL, vehicle_id UUID NULL, start_address VARCHAR NULL, end_address VARCHAR NULL, start_time TIMESTAMP NULL, end_time TIMESTAMP NULL, revenue DECIMAL(10,2) NULL, PRIMARY KEY (city ASC, id ASC), INDEX rides_auto_index_fk_city_ref_users (city ASC, rider_id ASC), INDEX rides_auto_index_fk_vehicle_city_ref_vehicles (vehicle_city ASC, vehicle_id ASC), CONSTRAINT check_vehicle_city_city CHECK (vehicle_city = city)) User:root}
+I200528 03:28:46.646092 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 56, info: {TableName:movr.public.vehicle_location_histories Statement:CREATE TABLE IF NOT EXISTS vehicle_location_histories (city VARCHAR NOT NULL, ride_id UUID NOT NULL, "timestamp" TIMESTAMP NOT NULL, lat FLOAT8 NULL, long FLOAT8 NULL, PRIMARY KEY (city ASC, ride_id ASC, "timestamp" ASC)) User:root}
+I200528 03:28:46.647777 2741 kv/kvserver/replica_command.go:397  [n1,split,s1,r34/1:/{Table/54-Max}] initiating a split of this range at key /Table/55 [r35] (zone config)
+I200528 03:28:46.649466 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 57, info: {TableName:movr.public.promo_codes Statement:CREATE TABLE IF NOT EXISTS promo_codes (code VARCHAR NOT NULL, description VARCHAR NULL, creation_time TIMESTAMP NULL, expiration_time TIMESTAMP NULL, rules JSONB NULL, PRIMARY KEY (code ASC)) User:root}
+I200528 03:28:46.652314 2330 sql/event_log.go:132  [n1,client=[::1]:56691,hostnossl,user=root] Event: "create_table", target: 58, info: {TableName:movr.public.user_promo_codes Statement:CREATE TABLE IF NOT EXISTS user_promo_codes (city VARCHAR NOT NULL, user_id UUID NOT NULL, code VARCHAR NOT NULL, "timestamp" TIMESTAMP NULL, usage_count INT8 NULL, PRIMARY KEY (city ASC, user_id ASC, code ASC)) User:root}
+I200528 03:28:46.656481 2847 kv/kvserver/replica_command.go:397  [n1,split,s1,r35/1:/{Table/55-Max}] initiating a split of this range at key /Table/56 [r36] (zone config)
+I200528 03:28:46.666081 2949 kv/kvserver/replica_command.go:397  [n1,split,s1,r36/1:/{Table/56-Max}] initiating a split of this range at key /Table/57 [r37] (zone config)
+I200528 03:28:46.676540 2979 kv/kvserver/replica_command.go:397  [n1,split,s1,r37/1:/{Table/57-Max}] initiating a split of this range at key /Table/58 [r38] (zone config)
+I200528 03:28:46.732929 2956 kv/kvserver/replica_command.go:397  [n1,s1,r33/1:/Table/5{3-4}] initiating a split of this range at key /Table/53/1/"paris"/"\xcc\xcc\xcc\xcc\xcc\xcc@\x00... [r39] (manual)
+I200528 03:28:46.742159 2956 kv/kvserver/replica_command.go:397  [n1,s1,r39/1:/Table/5{3/1/"par…-4}] initiating a split of this range at key /Table/53/1/"seattle"/"ffffffH\x00\x80\x00\x00\x00... [r40] (manual)
+I200528 03:28:46.748515 2956 kv/kvserver/replica_command.go:397  [n1,s1,r33/1:/Table/53{-/1/"pari…}] initiating a split of this range at key /Table/53/1/"los angeles"/"\x99\x99\x99\x99\x99\x9... [r41] (manual)
+I200528 03:28:46.757943 2956 kv/kvserver/replica_command.go:397  [n1,s1,r40/1:/Table/5{3/1/"sea…-4}] initiating a split of this range at key /Table/53/1/"washington dc"/"L\xcc\xcc\xcc\xcc\xcc... [r42] (manual)
+I200528 03:28:46.765056 2956 kv/kvserver/replica_command.go:397  [n1,s1,r39/1:/Table/53/1/"{paris"…-seattl…}] initiating a split of this range at key /Table/53/1/"san francisco"/"\x80\x00\x00\x00\x00\... [r43] (manual)
+I200528 03:28:46.773704 2956 kv/kvserver/replica_command.go:397  [n1,s1,r41/1:/Table/53/1/"{los an…-paris"…}] initiating a split of this range at key /Table/53/1/"new york"/"\x19\x99\x99\x99\x99\x99J\... [r44] (manual)
+I200528 03:28:46.780742 2956 kv/kvserver/replica_command.go:397  [n1,s1,r33/1:/Table/53{-/1/"los …}] initiating a split of this range at key /Table/53/1/"boston"/"333333D\x00\x80\x00\x00\x00\... [r45] (manual)
+I200528 03:28:46.787777 2956 kv/kvserver/replica_command.go:397  [n1,s1,r33/1:/Table/53{-/1/"bost…}] initiating a split of this range at key /Table/53/1/"amsterdam"/"\xb333333@\x00\x80\x00\x0... [r46] (manual)
+I200528 03:28:46.795892 2956 kv/kvserver/replica_command.go:397  [n1,s1,r34/1:/Table/5{4-5}] initiating a split of this range at key /Table/54/1/"san francisco"/"\x88\x88\x88\x88\x88\... [r47] (manual)
+I200528 03:28:46.804492 2956 kv/kvserver/replica_command.go:397  [n1,s1,r47/1:/Table/5{4/1/"san…-5}] initiating a split of this range at key /Table/54/1/"seattle"/"ffffffH\x00\x80\x00\x00\x00... [r48] (manual)
+I200528 03:28:46.812724 2956 kv/kvserver/replica_command.go:397  [n1,s1,r34/1:/Table/54{-/1/"san …}] initiating a split of this range at key /Table/54/1/"new york"/"\x11\x11\x11\x11\x11\x11A\... [r49] (manual)
+I200528 03:28:46.820287 2956 kv/kvserver/replica_command.go:397  [n1,s1,r48/1:/Table/5{4/1/"sea…-5}] initiating a split of this range at key /Table/54/1/"washington dc"/"DDDDDDD\x00\x80\x00\x... [r50] (manual)
+I200528 03:28:46.827804 2956 kv/kvserver/replica_command.go:397  [n1,s1,r47/1:/Table/54/1/"s{an fr…-eattl…}] initiating a split of this range at key /Table/54/1/"seattle"/"UUUUUUD\x00\x80\x00\x00\x00... [r51] (manual)
+I200528 03:28:46.838392 2956 kv/kvserver/replica_command.go:397  [n1,s1,r49/1:/Table/54/1/"{new yo…-san fr…}] initiating a split of this range at key /Table/54/1/"san francisco"/"wwwwwwH\x00\x80\x00\x... [r52] (manual)
+I200528 03:28:46.843726 2861 kv/kvserver/replica_command.go:397  [n1,s1,r34/1:/Table/54{-/1/"new …}] initiating a split of this range at key /Table/54/1/"boston"/"333333D\x00\x80\x00\x00\x00\... [r53] (manual)
+I200528 03:28:46.850676 2861 kv/kvserver/replica_command.go:397  [n1,s1,r34/1:/Table/54{-/1/"bost…}] initiating a split of this range at key /Table/54/1/"boston"/"\"\"\"\"\"\"B\x00\x80\x00\x0... [r54] (manual)
+I200528 03:28:46.864976 2861 kv/kvserver/replica_command.go:397  [n1,s1,r35/1:/Table/5{5-6}] initiating a split of this range at key /Table/55/1/"paris"/"\xe1G\xae\x14z\xe1H\x00\x80\x... [r55] (manual)
+I200528 03:28:46.871489 2861 kv/kvserver/replica_command.go:397  [n1,s1,r55/1:/Table/5{5/1/"par…-6}] initiating a split of this range at key /Table/55/1/"seattle"/"p\xa3\xd7\n=pD\x00\x80\x00\... [r56] (manual)
+I200528 03:28:46.880222 2861 kv/kvserver/replica_command.go:397  [n1,s1,r35/1:/Table/55{-/1/"pari…}] initiating a split of this range at key /Table/55/1/"los angeles"/"\xa8\xf5\u008f\\(H\x00\... [r57] (manual)
+I200528 03:28:46.887519 2861 kv/kvserver/replica_command.go:397  [n1,s1,r56/1:/Table/5{5/1/"sea…-6}] initiating a split of this range at key /Table/55/1/"washington dc"/"Tz\xe1G\xae\x14L\x00\... [r58] (manual)
+I200528 03:28:46.896152 2861 kv/kvserver/replica_command.go:397  [n1,s1,r55/1:/Table/55/1/"{paris"…-seattl…}] initiating a split of this range at key /Table/55/1/"san francisco"/"\x8c\xcc\xcc\xcc\xcc\... [r59] (manual)
+I200528 03:28:46.902583 2861 kv/kvserver/replica_command.go:397  [n1,s1,r57/1:/Table/55/1/"{los an…-paris"…}] initiating a split of this range at key /Table/55/1/"new york"/"\x1c(\xf5\u008f\\I\x00\x80... [r60] (manual)
+I200528 03:28:46.912442 2861 kv/kvserver/replica_command.go:397  [n1,s1,r35/1:/Table/55{-/1/"los …}] initiating a split of this range at key /Table/55/1/"boston"/"8Q\xeb\x85\x1e\xb8B\x00\x80\... [r61] (manual)
+I200528 03:28:46.917942 2861 kv/kvserver/replica_command.go:397  [n1,s1,r35/1:/Table/55{-/1/"bost…}] initiating a split of this range at key /Table/55/1/"amsterdam"/"\xc5\x1e\xb8Q\xeb\x85@\x0... [r62] (manual)
+I200528 03:28:46.931436 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911084725010433 for table 53, mutation 0
+I200528 03:28:46.931456 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=53 (users) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:46.933271 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911084732710913 for table 54, mutation 1
+I200528 03:28:46.933285 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=54 (vehicles) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:46.936444 2861 sql/event_log.go:132  [n1,client=[::1]:56698,hostnossl,user=root] Event: "alter_table", target: 54, info: {TableName:movr.public.vehicles Statement:ALTER TABLE vehicles ADD FOREIGN KEY (city, owner_id) REFERENCES users (city, id) User:root MutationID:1 CascadeDroppedViews:[]}
+I200528 03:28:46.936471 2861 jobs/registry.go:285  [n1,client=[::1]:56698,hostnossl,user=root] scheduled jobs [558911084725010433 558911084732710913]
+I200528 03:28:46.937858 3520 sql/lease.go:943  new lease: 53("users") ver=2:1590636835.146959869,0, refcount=0
+I200528 03:28:46.940175 3627 sql/lease.go:943  new lease: 54("vehicles") ver=2:1590636838.063347028,0, refcount=0
+I200528 03:28:46.946490 338 jobs/registry.go:1187  job 558911084725010433: resuming execution
+I200528 03:28:46.947518 3640 jobs/registry.go:806  [n1] job 558911084725010433: stepping through state running with error <nil>
+I200528 03:28:46.947838 3640 sql/schema_changer.go:418  [n1,job=558911084725010433,scExec] schema change on users (53 v2) mutation 0 starting execution...
+I200528 03:28:46.947872 3640 sql/schema_changer.go:706  [n1,job=558911084725010433,scExec] waiting for a single version of table 53...
+I200528 03:28:46.948835 3640 sql/schema_changer.go:708  [n1,job=558911084725010433,scExec] waiting for a single version of table 53... done (at v 2)
+I200528 03:28:46.948844 3640 jobs/registry.go:806  [n1] job 558911084725010433: stepping through state succeeded with error <nil>
+I200528 03:28:46.948871 338 jobs/registry.go:1187  job 558911084732710913: resuming execution
+I200528 03:28:46.949660 3706 jobs/registry.go:806  [n1] job 558911084732710913: stepping through state running with error <nil>
+I200528 03:28:46.949784 3706 sql/schema_changer.go:418  [n1,job=558911084732710913,scExec] schema change on vehicles (54 v2) mutation 1 starting execution...
+I200528 03:28:46.951887 3640 jobs/registry.go:961  [n1] job 558911084725010433: status succeeded after adoption finished
+I200528 03:28:46.952508 3706 sql/sqlbase/structured.go:1554  [n1,job=558911084732710913,scExec] publish: descID=54 (vehicles) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:46.954485 3706 sql/schema_changer.go:706  [n1,job=558911084732710913,scExec] waiting for a single version of table 54...
+I200528 03:28:46.956232 3706 sql/lease.go:337  [n1,job=558911084732710913,scExec] waiting for 1 leases to expire: desc=[{vehicles 54 2}]
+I200528 03:28:46.956754 3632 sql/lease.go:943  new lease: 54("vehicles") ver=3:1590636838.261163256,0, refcount=0
+I200528 03:28:46.983005 3706 sql/schema_changer.go:708  [n1,job=558911084732710913,scExec] waiting for a single version of table 54... done (at v 3)
+I200528 03:28:46.987013 3706 sql/backfill.go:171  [n1,job=558911084732710913,scExec] Running backfill for "vehicles", v=3, m=1
+I200528 03:28:46.991758 3706 sql/sqlbase/structured.go:1554  [n1,job=558911084732710913,scExec] publish: descID=54 (vehicles) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:46.991792 3706 sql/sqlbase/structured.go:1554  [n1,job=558911084732710913,scExec] publish: descID=53 (users) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:46.992688 3706 sql/schema_changer.go:706  [n1,job=558911084732710913,scExec] waiting for a single version of table 54...
+I200528 03:28:46.994624 3706 sql/lease.go:337  [n1,job=558911084732710913,scExec] waiting for 1 leases to expire: desc=[{vehicles 54 3}]
+I200528 03:28:46.995252 3541 sql/lease.go:943  new lease: 53("users") ver=3:1590636835.292401975,0, refcount=0
+I200528 03:28:46.997528 3928 sql/lease.go:943  new lease: 54("vehicles") ver=4:1590636838.262163256,0, refcount=0
+I200528 03:28:47.016564 3706 sql/schema_changer.go:708  [n1,job=558911084732710913,scExec] waiting for a single version of table 54... done (at v 4)
+I200528 03:28:47.016583 3706 sql/schema_changer.go:706  [n1,job=558911084732710913,scExec] waiting for a single version of table 53...
+I200528 03:28:47.018558 3706 sql/schema_changer.go:708  [n1,job=558911084732710913,scExec] waiting for a single version of table 53... done (at v 3)
+I200528 03:28:47.025285 3933 sql/check.go:288  [n1,job=558911084732710913,scExec] Validating FK "fk_city_ref_users" ("vehicles" [[city owner_id id]] -> "users" [[city id]]) with query "SELECT s.city, s.owner_id, s.id FROM \n\t\t  (SELECT city, owner_id, id FROM [54 AS src]@{IGNORE_FOREIGN_KEYS} WHERE city IS NOT NULL AND owner_id IS NOT NULL) AS s\n\t\t\tLEFT OUTER JOIN\n\t\t\t(SELECT * FROM [53 AS target]) AS t\n\t\t\tON s.city = t.city AND s.owner_id = t.id\n\t\t WHERE t.city IS NULL  LIMIT 1"
+I200528 03:28:47.028167 3706 sql/backfill.go:287  [n1,job=558911084732710913,scExec] Completed backfill for "vehicles", v=3, m=1
+I200528 03:28:47.030299 3706 sql/sqlbase/structured.go:1554  [n1,job=558911084732710913,scExec] publish: descID=54 (vehicles) version=5 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.032669 3706 sql/event_log.go:132  [n1,job=558911084732710913,scExec] Event: "finish_schema_change", target: 54, info: {MutationID:1}
+I200528 03:28:47.032684 3706 sql/schema_changer.go:706  [n1,job=558911084732710913,scExec] waiting for a single version of table 54...
+I200528 03:28:47.034430 3706 sql/lease.go:337  [n1,job=558911084732710913,scExec] waiting for 1 leases to expire: desc=[{vehicles 54 4}]
+I200528 03:28:47.034699 3784 sql/lease.go:943  new lease: 54("vehicles") ver=5:1590636838.263163256,0, refcount=0
+I200528 03:28:47.062169 3706 sql/schema_changer.go:708  [n1,job=558911084732710913,scExec] waiting for a single version of table 54... done (at v 5)
+I200528 03:28:47.062199 3706 jobs/registry.go:806  [n1] job 558911084732710913: stepping through state succeeded with error <nil>
+I200528 03:28:47.067774 3706 jobs/registry.go:961  [n1] job 558911084732710913: status succeeded after adoption finished
+I200528 03:28:47.115136 2956 sql/table.go:991  [n1,client=[::1]:56707,hostnossl,user=root] queued new schema change job 558911085325778945 for table 53, mutation 0
+I200528 03:28:47.115160 2956 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56707,hostnossl,user=root] publish: descID=53 (users) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.117950 2956 sql/table.go:991  [n1,client=[::1]:56707,hostnossl,user=root] queued new schema change job 558911085336723457 for table 55, mutation 1
+I200528 03:28:47.117971 2956 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56707,hostnossl,user=root] publish: descID=55 (rides) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.122115 2956 sql/event_log.go:132  [n1,client=[::1]:56707,hostnossl,user=root] Event: "alter_table", target: 55, info: {TableName:movr.public.rides Statement:ALTER TABLE rides ADD FOREIGN KEY (city, rider_id) REFERENCES users (city, id) User:root MutationID:1 CascadeDroppedViews:[]}
+I200528 03:28:47.122184 2956 jobs/registry.go:285  [n1,client=[::1]:56707,hostnossl,user=root] scheduled jobs [558911085325778945 558911085336723457]
+I200528 03:28:47.125382 4118 sql/lease.go:943  new lease: 53("users") ver=4:1590636835.293401975,0, refcount=0
+I200528 03:28:47.127580 4346 sql/lease.go:943  new lease: 55("rides") ver=2:1590636828.046080862,0, refcount=0
+I200528 03:28:47.132689 338 jobs/registry.go:1187  job 558911085325778945: resuming execution
+I200528 03:28:47.133919 4358 jobs/registry.go:806  [n1] job 558911085325778945: stepping through state running with error <nil>
+I200528 03:28:47.134085 4358 sql/schema_changer.go:418  [n1,job=558911085325778945,scExec] schema change on users (53 v4) mutation 0 starting execution...
+I200528 03:28:47.134091 4358 sql/schema_changer.go:706  [n1,job=558911085325778945,scExec] waiting for a single version of table 53...
+I200528 03:28:47.135333 4358 sql/schema_changer.go:708  [n1,job=558911085325778945,scExec] waiting for a single version of table 53... done (at v 4)
+I200528 03:28:47.135345 4358 jobs/registry.go:806  [n1] job 558911085325778945: stepping through state succeeded with error <nil>
+I200528 03:28:47.136066 338 jobs/registry.go:1187  job 558911085336723457: resuming execution
+I200528 03:28:47.137161 4203 jobs/registry.go:806  [n1] job 558911085336723457: stepping through state running with error <nil>
+I200528 03:28:47.137347 4203 sql/schema_changer.go:418  [n1,job=558911085336723457,scExec] schema change on rides (55 v2) mutation 1 starting execution...
+I200528 03:28:47.138227 4358 jobs/registry.go:961  [n1] job 558911085325778945: status succeeded after adoption finished
+I200528 03:28:47.141936 4203 sql/sqlbase/structured.go:1554  [n1,job=558911085336723457,scExec] publish: descID=55 (rides) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.144753 4203 sql/schema_changer.go:706  [n1,job=558911085336723457,scExec] waiting for a single version of table 55...
+I200528 03:28:47.146369 4203 sql/lease.go:337  [n1,job=558911085336723457,scExec] waiting for 1 leases to expire: desc=[{rides 55 2}]
+I200528 03:28:47.146587 4387 sql/lease.go:943  new lease: 55("rides") ver=3:1590636838.793937541,0, refcount=0
+I200528 03:28:47.167074 4203 sql/schema_changer.go:708  [n1,job=558911085336723457,scExec] waiting for a single version of table 55... done (at v 3)
+I200528 03:28:47.170494 4203 sql/backfill.go:171  [n1,job=558911085336723457,scExec] Running backfill for "rides", v=3, m=1
+I200528 03:28:47.174742 4203 sql/sqlbase/structured.go:1554  [n1,job=558911085336723457,scExec] publish: descID=55 (rides) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.174773 4203 sql/sqlbase/structured.go:1554  [n1,job=558911085336723457,scExec] publish: descID=53 (users) version=5 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.175694 4203 sql/schema_changer.go:706  [n1,job=558911085336723457,scExec] waiting for a single version of table 55...
+I200528 03:28:47.177666 4203 sql/lease.go:337  [n1,job=558911085336723457,scExec] waiting for 1 leases to expire: desc=[{rides 55 3}]
+I200528 03:28:47.178132 4397 sql/lease.go:943  new lease: 53("users") ver=5:1590636835.294401975,0, refcount=0
+I200528 03:28:47.179929 4690 sql/lease.go:943  new lease: 55("rides") ver=4:1590636838.794937541,0, refcount=0
+I200528 03:28:47.201514 4203 sql/schema_changer.go:708  [n1,job=558911085336723457,scExec] waiting for a single version of table 55... done (at v 4)
+I200528 03:28:47.201532 4203 sql/schema_changer.go:706  [n1,job=558911085336723457,scExec] waiting for a single version of table 53...
+I200528 03:28:47.203521 4203 sql/schema_changer.go:708  [n1,job=558911085336723457,scExec] waiting for a single version of table 53... done (at v 5)
+I200528 03:28:47.208151 4652 sql/check.go:288  [n1,job=558911085336723457,scExec] Validating FK "fk_city_ref_users" ("rides" [[city rider_id id]] -> "users" [[city id]]) with query "SELECT s.city, s.rider_id, s.id FROM \n\t\t  (SELECT city, rider_id, id FROM [55 AS src]@{IGNORE_FOREIGN_KEYS} WHERE city IS NOT NULL AND rider_id IS NOT NULL) AS s\n\t\t\tLEFT OUTER JOIN\n\t\t\t(SELECT * FROM [53 AS target]) AS t\n\t\t\tON s.city = t.city AND s.rider_id = t.id\n\t\t WHERE t.city IS NULL  LIMIT 1"
+I200528 03:28:47.214151 4203 sql/backfill.go:287  [n1,job=558911085336723457,scExec] Completed backfill for "rides", v=3, m=1
+I200528 03:28:47.216962 4203 sql/sqlbase/structured.go:1554  [n1,job=558911085336723457,scExec] publish: descID=55 (rides) version=5 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.219285 4203 sql/event_log.go:132  [n1,job=558911085336723457,scExec] Event: "finish_schema_change", target: 55, info: {MutationID:1}
+I200528 03:28:47.219304 4203 sql/schema_changer.go:706  [n1,job=558911085336723457,scExec] waiting for a single version of table 55...
+I200528 03:28:47.220963 4203 sql/lease.go:337  [n1,job=558911085336723457,scExec] waiting for 1 leases to expire: desc=[{rides 55 4}]
+I200528 03:28:47.221161 4712 sql/lease.go:943  new lease: 55("rides") ver=5:1590636838.795937541,0, refcount=0
+I200528 03:28:47.245355 4203 sql/schema_changer.go:708  [n1,job=558911085336723457,scExec] waiting for a single version of table 55... done (at v 5)
+I200528 03:28:47.245419 4203 jobs/registry.go:806  [n1] job 558911085336723457: stepping through state succeeded with error <nil>
+I200528 03:28:47.251055 4203 jobs/registry.go:961  [n1] job 558911085336723457: status succeeded after adoption finished
+I200528 03:28:47.316847 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911085983072257 for table 54, mutation 0
+I200528 03:28:47.316871 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=54 (vehicles) version=6 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.331548 209 server/status/runtime.go:498  [n1] runtime stats: 167 MiB RSS, 234 goroutines, 82 MiB/100 MiB/130 MiB GO alloc/idle/total, 19 MiB/28 MiB CGO alloc/total, 2343.3 CGO/sec, 10.7/5.6 %(u/s)time, 0.0 %gc (1x), 990 KiB/1.5 MiB (r/w)net
+I200528 03:28:47.333035 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911086041268225 for table 55, mutation 2
+I200528 03:28:47.333055 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=55 (rides) version=6 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.336596 2861 sql/event_log.go:132  [n1,client=[::1]:56698,hostnossl,user=root] Event: "alter_table", target: 55, info: {TableName:movr.public.rides Statement:ALTER TABLE rides ADD FOREIGN KEY (vehicle_city, vehicle_id) REFERENCES vehicles (city, id) User:root MutationID:2 CascadeDroppedViews:[]}
+I200528 03:28:47.336636 2861 jobs/registry.go:285  [n1,client=[::1]:56698,hostnossl,user=root] scheduled jobs [558911085983072257 558911086041268225]
+I200528 03:28:47.338661 4730 sql/lease.go:943  new lease: 54("vehicles") ver=6:1590636838.264163256,0, refcount=0
+I200528 03:28:47.341187 5005 sql/lease.go:943  new lease: 55("rides") ver=6:1590636838.796937541,0, refcount=0
+I200528 03:28:47.345845 338 jobs/registry.go:1187  job 558911085983072257: resuming execution
+I200528 03:28:47.346947 4737 jobs/registry.go:806  [n1] job 558911085983072257: stepping through state running with error <nil>
+I200528 03:28:47.347114 4737 sql/schema_changer.go:418  [n1,job=558911085983072257,scExec] schema change on vehicles (54 v6) mutation 0 starting execution...
+I200528 03:28:47.347120 4737 sql/schema_changer.go:706  [n1,job=558911085983072257,scExec] waiting for a single version of table 54...
+I200528 03:28:47.348263 4737 sql/schema_changer.go:708  [n1,job=558911085983072257,scExec] waiting for a single version of table 54... done (at v 6)
+I200528 03:28:47.348274 4737 jobs/registry.go:806  [n1] job 558911085983072257: stepping through state succeeded with error <nil>
+I200528 03:28:47.348878 338 jobs/registry.go:1187  job 558911086041268225: resuming execution
+I200528 03:28:47.350002 5016 jobs/registry.go:806  [n1] job 558911086041268225: stepping through state running with error <nil>
+I200528 03:28:47.350164 5016 sql/schema_changer.go:418  [n1,job=558911086041268225,scExec] schema change on rides (55 v6) mutation 2 starting execution...
+I200528 03:28:47.351617 4737 jobs/registry.go:961  [n1] job 558911085983072257: status succeeded after adoption finished
+I200528 03:28:47.353282 5016 sql/sqlbase/structured.go:1554  [n1,job=558911086041268225,scExec] publish: descID=55 (rides) version=7 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.356415 5016 sql/schema_changer.go:706  [n1,job=558911086041268225,scExec] waiting for a single version of table 55...
+I200528 03:28:47.358075 5016 sql/lease.go:337  [n1,job=558911086041268225,scExec] waiting for 1 leases to expire: desc=[{rides 55 6}]
+I200528 03:28:47.358351 4828 sql/lease.go:943  new lease: 55("rides") ver=7:1590636838.797937541,0, refcount=0
+I200528 03:28:47.383956 5016 sql/schema_changer.go:708  [n1,job=558911086041268225,scExec] waiting for a single version of table 55... done (at v 7)
+I200528 03:28:47.385812 5016 sql/backfill.go:171  [n1,job=558911086041268225,scExec] Running backfill for "rides", v=7, m=2
+I200528 03:28:47.387926 5016 sql/sqlbase/structured.go:1554  [n1,job=558911086041268225,scExec] publish: descID=55 (rides) version=8 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.387950 5016 sql/sqlbase/structured.go:1554  [n1,job=558911086041268225,scExec] publish: descID=54 (vehicles) version=7 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.388563 5016 sql/schema_changer.go:706  [n1,job=558911086041268225,scExec] waiting for a single version of table 55...
+I200528 03:28:47.390832 5016 sql/lease.go:337  [n1,job=558911086041268225,scExec] waiting for 1 leases to expire: desc=[{rides 55 7}]
+I200528 03:28:47.390897 5037 sql/lease.go:943  new lease: 54("vehicles") ver=7:1590636838.265163256,0, refcount=0
+I200528 03:28:47.392323 5288 sql/lease.go:943  new lease: 55("rides") ver=8:1590636838.798937541,0, refcount=0
+I200528 03:28:47.411438 5016 sql/schema_changer.go:708  [n1,job=558911086041268225,scExec] waiting for a single version of table 55... done (at v 8)
+I200528 03:28:47.411447 5016 sql/schema_changer.go:706  [n1,job=558911086041268225,scExec] waiting for a single version of table 54...
+I200528 03:28:47.412785 5016 sql/schema_changer.go:708  [n1,job=558911086041268225,scExec] waiting for a single version of table 54... done (at v 7)
+I200528 03:28:47.415735 5182 sql/check.go:288  [n1,job=558911086041268225,scExec] Validating FK "fk_vehicle_city_ref_vehicles" ("rides" [[vehicle_city vehicle_id city id]] -> "vehicles" [[city id]]) with query "SELECT s.vehicle_city, s.vehicle_id, s.city, s.id FROM \n\t\t  (SELECT vehicle_city, vehicle_id, city, id FROM [55 AS src]@{IGNORE_FOREIGN_KEYS} WHERE vehicle_city IS NOT NULL AND vehicle_id IS NOT NULL) AS s\n\t\t\tLEFT OUTER JOIN\n\t\t\t(SELECT * FROM [54 AS target]) AS t\n\t\t\tON s.vehicle_city = t.city AND s.vehicle_id = t.id\n\t\t WHERE t.city IS NULL  LIMIT 1"
+I200528 03:28:47.418871 5016 sql/backfill.go:287  [n1,job=558911086041268225,scExec] Completed backfill for "rides", v=7, m=2
+I200528 03:28:47.420171 5016 sql/sqlbase/structured.go:1554  [n1,job=558911086041268225,scExec] publish: descID=55 (rides) version=9 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.422558 5016 sql/event_log.go:132  [n1,job=558911086041268225,scExec] Event: "finish_schema_change", target: 55, info: {MutationID:2}
+I200528 03:28:47.422624 5016 sql/schema_changer.go:706  [n1,job=558911086041268225,scExec] waiting for a single version of table 55...
+I200528 03:28:47.424241 5016 sql/lease.go:337  [n1,job=558911086041268225,scExec] waiting for 1 leases to expire: desc=[{rides 55 8}]
+I200528 03:28:47.424453 5325 sql/lease.go:943  new lease: 55("rides") ver=9:1590636838.799937541,0, refcount=0
+I200528 03:28:47.449465 5016 sql/schema_changer.go:708  [n1,job=558911086041268225,scExec] waiting for a single version of table 55... done (at v 9)
+I200528 03:28:47.449498 5016 jobs/registry.go:806  [n1] job 558911086041268225: stepping through state succeeded with error <nil>
+I200528 03:28:47.455024 5016 jobs/registry.go:961  [n1] job 558911086041268225: status succeeded after adoption finished
+I200528 03:28:47.506886 2956 sql/table.go:991  [n1,client=[::1]:56707,hostnossl,user=root] queued new schema change job 558911086609563649 for table 55, mutation 0
+I200528 03:28:47.506951 2956 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56707,hostnossl,user=root] publish: descID=55 (rides) version=10 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.511428 2956 sql/table.go:991  [n1,client=[::1]:56707,hostnossl,user=root] queued new schema change job 558911086625325057 for table 56, mutation 1
+I200528 03:28:47.511452 2956 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56707,hostnossl,user=root] publish: descID=56 (vehicle_location_histories) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.516434 2956 sql/event_log.go:132  [n1,client=[::1]:56707,hostnossl,user=root] Event: "alter_table", target: 56, info: {TableName:movr.public.vehicle_location_histories Statement:ALTER TABLE vehicle_location_histories ADD FOREIGN KEY (city, ride_id) REFERENCES rides (city, id) User:root MutationID:1 CascadeDroppedViews:[]}
+I200528 03:28:47.516460 2956 jobs/registry.go:285  [n1,client=[::1]:56707,hostnossl,user=root] scheduled jobs [558911086609563649 558911086625325057]
+I200528 03:28:47.518584 5345 sql/lease.go:943  new lease: 55("rides") ver=10:1590636838.800937541,0, refcount=0
+I200528 03:28:47.520109 5668 sql/lease.go:943  new lease: 56("vehicle_location_histories") ver=2:1590636820.762725697,0, refcount=0
+I200528 03:28:47.526412 338 jobs/registry.go:1187  job 558911086609563649: resuming execution
+I200528 03:28:47.527474 5700 jobs/registry.go:806  [n1] job 558911086609563649: stepping through state running with error <nil>
+I200528 03:28:47.527622 5700 sql/schema_changer.go:418  [n1,job=558911086609563649,scExec] schema change on rides (55 v10) mutation 0 starting execution...
+I200528 03:28:47.527628 5700 sql/schema_changer.go:706  [n1,job=558911086609563649,scExec] waiting for a single version of table 55...
+I200528 03:28:47.529854 5700 sql/schema_changer.go:708  [n1,job=558911086609563649,scExec] waiting for a single version of table 55... done (at v 10)
+I200528 03:28:47.529880 5700 jobs/registry.go:806  [n1] job 558911086609563649: stepping through state succeeded with error <nil>
+I200528 03:28:47.531347 338 jobs/registry.go:1187  job 558911086625325057: resuming execution
+I200528 03:28:47.534589 5579 jobs/registry.go:806  [n1] job 558911086625325057: stepping through state running with error <nil>
+I200528 03:28:47.534755 5579 sql/schema_changer.go:418  [n1,job=558911086625325057,scExec] schema change on vehicle_location_histories (56 v2) mutation 1 starting execution...
+I200528 03:28:47.535637 5700 jobs/registry.go:961  [n1] job 558911086609563649: status succeeded after adoption finished
+I200528 03:28:47.538681 5579 sql/sqlbase/structured.go:1554  [n1,job=558911086625325057,scExec] publish: descID=56 (vehicle_location_histories) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.542421 5579 sql/schema_changer.go:706  [n1,job=558911086625325057,scExec] waiting for a single version of table 56...
+I200528 03:28:47.543747 5579 sql/lease.go:337  [n1,job=558911086625325057,scExec] waiting for 1 leases to expire: desc=[{vehicle_location_histories 56 2}]
+I200528 03:28:47.544143 5530 sql/lease.go:943  new lease: 56("vehicle_location_histories") ver=3:1590636842.392410454,0, refcount=0
+I200528 03:28:47.570308 5579 sql/schema_changer.go:708  [n1,job=558911086625325057,scExec] waiting for a single version of table 56... done (at v 3)
+I200528 03:28:47.575979 5579 sql/backfill.go:171  [n1,job=558911086625325057,scExec] Running backfill for "vehicle_location_histories", v=3, m=1
+I200528 03:28:47.580247 5579 sql/sqlbase/structured.go:1554  [n1,job=558911086625325057,scExec] publish: descID=56 (vehicle_location_histories) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.580271 5579 sql/sqlbase/structured.go:1554  [n1,job=558911086625325057,scExec] publish: descID=55 (rides) version=11 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.581373 5579 sql/schema_changer.go:706  [n1,job=558911086625325057,scExec] waiting for a single version of table 56...
+I200528 03:28:47.583131 5579 sql/lease.go:337  [n1,job=558911086625325057,scExec] waiting for 1 leases to expire: desc=[{vehicle_location_histories 56 3}]
+I200528 03:28:47.583222 5534 sql/lease.go:943  new lease: 55("rides") ver=11:1590636838.801937541,0, refcount=0
+I200528 03:28:47.584806 5711 sql/lease.go:943  new lease: 56("vehicle_location_histories") ver=4:1590636842.393410454,0, refcount=0
+I200528 03:28:47.610907 5579 sql/schema_changer.go:708  [n1,job=558911086625325057,scExec] waiting for a single version of table 56... done (at v 4)
+I200528 03:28:47.610921 5579 sql/schema_changer.go:706  [n1,job=558911086625325057,scExec] waiting for a single version of table 55...
+I200528 03:28:47.613212 5579 sql/schema_changer.go:708  [n1,job=558911086625325057,scExec] waiting for a single version of table 55... done (at v 11)
+I200528 03:28:47.616983 5862 sql/check.go:288  [n1,job=558911086625325057,scExec] Validating FK "fk_city_ref_rides" ("vehicle_location_histories" [[city ride_id timestamp]] -> "rides" [[city id]]) with query "SELECT s.city, s.ride_id, s.\"timestamp\" FROM \n\t\t  (SELECT city, ride_id, \"timestamp\" FROM [56 AS src]@{IGNORE_FOREIGN_KEYS} WHERE city IS NOT NULL AND ride_id IS NOT NULL) AS s\n\t\t\tLEFT OUTER JOIN\n\t\t\t(SELECT * FROM [55 AS target]) AS t\n\t\t\tON s.city = t.city AND s.ride_id = t.id\n\t\t WHERE t.city IS NULL  LIMIT 1"
+I200528 03:28:47.628383 5579 sql/backfill.go:287  [n1,job=558911086625325057,scExec] Completed backfill for "vehicle_location_histories", v=3, m=1
+I200528 03:28:47.629809 5579 sql/sqlbase/structured.go:1554  [n1,job=558911086625325057,scExec] publish: descID=56 (vehicle_location_histories) version=5 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.631699 5579 sql/event_log.go:132  [n1,job=558911086625325057,scExec] Event: "finish_schema_change", target: 56, info: {MutationID:1}
+I200528 03:28:47.631711 5579 sql/schema_changer.go:706  [n1,job=558911086625325057,scExec] waiting for a single version of table 56...
+I200528 03:28:47.633126 5579 sql/lease.go:337  [n1,job=558911086625325057,scExec] waiting for 1 leases to expire: desc=[{vehicle_location_histories 56 4}]
+I200528 03:28:47.633300 5870 sql/lease.go:943  new lease: 56("vehicle_location_histories") ver=5:1590636842.394410454,0, refcount=0
+I200528 03:28:47.662336 5579 sql/schema_changer.go:708  [n1,job=558911086625325057,scExec] waiting for a single version of table 56... done (at v 5)
+I200528 03:28:47.662369 5579 jobs/registry.go:806  [n1] job 558911086625325057: stepping through state succeeded with error <nil>
+I200528 03:28:47.668226 5579 jobs/registry.go:961  [n1] job 558911086625325057: status succeeded after adoption finished
+I200528 03:28:47.710041 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911087274754049 for table 53, mutation 0
+I200528 03:28:47.710065 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=53 (users) version=6 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.713163 2861 sql/table.go:991  [n1,client=[::1]:56698,hostnossl,user=root] queued new schema change job 558911087285829633 for table 58, mutation 1
+I200528 03:28:47.713189 2861 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56698,hostnossl,user=root] publish: descID=58 (user_promo_codes) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.717577 2861 sql/event_log.go:132  [n1,client=[::1]:56698,hostnossl,user=root] Event: "alter_table", target: 58, info: {TableName:movr.public.user_promo_codes Statement:ALTER TABLE user_promo_codes ADD FOREIGN KEY (city, user_id) REFERENCES users (city, id) User:root MutationID:1 CascadeDroppedViews:[]}
+I200528 03:28:47.717610 2861 jobs/registry.go:285  [n1,client=[::1]:56698,hostnossl,user=root] scheduled jobs [558911087274754049 558911087285829633]
+I200528 03:28:47.719415 6164 sql/lease.go:943  new lease: 53("users") ver=6:1590636840.694954041,0, refcount=0
+I200528 03:28:47.727692 338 jobs/registry.go:1187  job 558911087274754049: resuming execution
+I200528 03:28:47.728861 6324 jobs/registry.go:806  [n1] job 558911087274754049: stepping through state running with error <nil>
+I200528 03:28:47.729082 6324 sql/schema_changer.go:418  [n1,job=558911087274754049,scExec] schema change on users (53 v6) mutation 0 starting execution...
+I200528 03:28:47.729089 6324 sql/schema_changer.go:706  [n1,job=558911087274754049,scExec] waiting for a single version of table 53...
+I200528 03:28:47.730233 6324 sql/schema_changer.go:708  [n1,job=558911087274754049,scExec] waiting for a single version of table 53... done (at v 6)
+I200528 03:28:47.730242 6324 jobs/registry.go:806  [n1] job 558911087274754049: stepping through state succeeded with error <nil>
+I200528 03:28:47.730937 338 jobs/registry.go:1187  job 558911087285829633: resuming execution
+I200528 03:28:47.731984 6294 jobs/registry.go:806  [n1] job 558911087285829633: stepping through state running with error <nil>
+I200528 03:28:47.732139 6294 sql/schema_changer.go:418  [n1,job=558911087285829633,scExec] schema change on user_promo_codes (58 v2) mutation 1 starting execution...
+I200528 03:28:47.733574 6324 jobs/registry.go:961  [n1] job 558911087274754049: status succeeded after adoption finished
+I200528 03:28:47.735290 6294 sql/sqlbase/structured.go:1554  [n1,job=558911087285829633,scExec] publish: descID=58 (user_promo_codes) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.737581 6294 sql/schema_changer.go:706  [n1,job=558911087285829633,scExec] waiting for a single version of table 58...
+I200528 03:28:47.738912 6294 sql/schema_changer.go:708  [n1,job=558911087285829633,scExec] waiting for a single version of table 58... done (at v 3)
+I200528 03:28:47.745618 6294 sql/backfill.go:171  [n1,job=558911087285829633,scExec] Running backfill for "user_promo_codes", v=3, m=1
+I200528 03:28:47.748545 6294 sql/sqlbase/structured.go:1554  [n1,job=558911087285829633,scExec] publish: descID=58 (user_promo_codes) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.748565 6294 sql/sqlbase/structured.go:1554  [n1,job=558911087285829633,scExec] publish: descID=53 (users) version=7 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.749241 6294 sql/schema_changer.go:706  [n1,job=558911087285829633,scExec] waiting for a single version of table 58...
+I200528 03:28:47.750683 6294 sql/schema_changer.go:708  [n1,job=558911087285829633,scExec] waiting for a single version of table 58... done (at v 4)
+I200528 03:28:47.750691 6294 sql/schema_changer.go:706  [n1,job=558911087285829633,scExec] waiting for a single version of table 53...
+I200528 03:28:47.750897 6431 sql/lease.go:943  new lease: 53("users") ver=7:1590636840.695954041,0, refcount=0
+I200528 03:28:47.751696 6294 sql/lease.go:337  [n1,job=558911087285829633,scExec] waiting for 1 leases to expire: desc=[{users 53 6}]
+I200528 03:28:47.775612 6294 sql/schema_changer.go:708  [n1,job=558911087285829633,scExec] waiting for a single version of table 53... done (at v 7)
+I200528 03:28:47.780483 6628 sql/check.go:288  [n1,job=558911087285829633,scExec] Validating FK "fk_city_ref_users" ("user_promo_codes" [[city user_id code]] -> "users" [[city id]]) with query "SELECT s.city, s.user_id, s.code FROM \n\t\t  (SELECT city, user_id, code FROM [58 AS src]@{IGNORE_FOREIGN_KEYS} WHERE city IS NOT NULL AND user_id IS NOT NULL) AS s\n\t\t\tLEFT OUTER JOIN\n\t\t\t(SELECT * FROM [53 AS target]) AS t\n\t\t\tON s.city = t.city AND s.user_id = t.id\n\t\t WHERE t.city IS NULL  LIMIT 1"
+I200528 03:28:47.783674 6294 sql/backfill.go:287  [n1,job=558911087285829633,scExec] Completed backfill for "user_promo_codes", v=3, m=1
+I200528 03:28:47.785519 6294 sql/sqlbase/structured.go:1554  [n1,job=558911087285829633,scExec] publish: descID=58 (user_promo_codes) version=5 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:28:47.788100 6294 sql/event_log.go:132  [n1,job=558911087285829633,scExec] Event: "finish_schema_change", target: 58, info: {MutationID:1}
+I200528 03:28:47.788118 6294 sql/schema_changer.go:706  [n1,job=558911087285829633,scExec] waiting for a single version of table 58...
+I200528 03:28:47.790715 6294 sql/schema_changer.go:708  [n1,job=558911087285829633,scExec] waiting for a single version of table 58... done (at v 5)
+I200528 03:28:47.790732 6294 jobs/registry.go:806  [n1] job 558911087285829633: stepping through state succeeded with error <nil>
+I200528 03:28:47.794377 6294 jobs/registry.go:961  [n1] job 558911087285829633: status succeeded after adoption finished
+I200528 03:28:57.331565 209 server/status/runtime.go:498  [n1] runtime stats: 169 MiB RSS, 185 goroutines, 77 MiB/99 MiB/130 MiB GO alloc/idle/total, 18 MiB/29 MiB CGO alloc/total, 870.2 CGO/sec, 4.7/1.3 %(u/s)time, 0.0 %gc (1x), 71 KiB/561 KiB (r/w)net
+I200528 03:29:07.337195 209 server/status/runtime.go:498  [n1] runtime stats: 170 MiB RSS, 188 goroutines, 85 MiB/93 MiB/130 MiB GO alloc/idle/total, 18 MiB/29 MiB CGO alloc/total, 31.7 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 82 KiB/597 KiB (r/w)net
+I200528 03:29:17.334683 209 server/status/runtime.go:498  [n1] runtime stats: 170 MiB RSS, 188 goroutines, 93 MiB/86 MiB/130 MiB GO alloc/idle/total, 18 MiB/29 MiB CGO alloc/total, 51.9 CGO/sec, 0.8/0.4 %(u/s)time, 0.0 %gc (0x), 71 KiB/442 KiB (r/w)net
+I200528 03:29:27.284878 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:29:27.340346 209 server/status/runtime.go:498  [n1] runtime stats: 172 MiB RSS, 189 goroutines, 102 MiB/78 MiB/133 MiB GO alloc/idle/total, 18 MiB/29 MiB CGO alloc/total, 99.2 CGO/sec, 0.9/0.4 %(u/s)time, 0.0 %gc (0x), 145 KiB/475 KiB (r/w)net
+I200528 03:29:27.382847 7380 jobs/registry.go:806  [n1] job 558911217252728833: stepping through state running with error <nil>
+I200528 03:29:27.405424 7380 jobs/registry.go:806  [n1] job 558911217252728833: stepping through state succeeded with error <nil>
+I200528 03:29:27.408379 7380 jobs/registry.go:961  [n1] job 558911217252728833: status succeeded after adoption finished
+I200528 03:29:27.413744 7404 jobs/registry.go:806  [n1] job 558911217368006657: stepping through state running with error <nil>
+I200528 03:29:27.437168 7404 jobs/registry.go:806  [n1] job 558911217368006657: stepping through state succeeded with error <nil>
+I200528 03:29:27.440478 7404 jobs/registry.go:961  [n1] job 558911217368006657: status succeeded after adoption finished
+I200528 03:29:27.445923 7477 jobs/registry.go:806  [n1] job 558911217473060865: stepping through state running with error <nil>
+I200528 03:29:27.478493 7477 jobs/registry.go:806  [n1] job 558911217473060865: stepping through state succeeded with error <nil>
+I200528 03:29:27.480980 7477 jobs/registry.go:961  [n1] job 558911217473060865: status succeeded after adoption finished
+I200528 03:29:27.487411 7444 jobs/registry.go:806  [n1] job 558911217608228865: stepping through state running with error <nil>
+I200528 03:29:27.508436 7444 jobs/registry.go:806  [n1] job 558911217608228865: stepping through state succeeded with error <nil>
+I200528 03:29:27.511101 7444 jobs/registry.go:961  [n1] job 558911217608228865: status succeeded after adoption finished
+I200528 03:29:27.516768 7596 jobs/registry.go:806  [n1] job 558911217704042497: stepping through state running with error <nil>
+I200528 03:29:27.535448 7596 jobs/registry.go:806  [n1] job 558911217704042497: stepping through state succeeded with error <nil>
+I200528 03:29:27.538205 7596 jobs/registry.go:961  [n1] job 558911217704042497: status succeeded after adoption finished
+I200528 03:29:27.544379 7549 jobs/registry.go:806  [n1] job 558911217796939777: stepping through state running with error <nil>
+I200528 03:29:27.560283 7549 jobs/registry.go:806  [n1] job 558911217796939777: stepping through state succeeded with error <nil>
+I200528 03:29:27.562765 7549 jobs/registry.go:961  [n1] job 558911217796939777: status succeeded after adoption finished
+I200528 03:29:37.345868 209 server/status/runtime.go:498  [n1] runtime stats: 173 MiB RSS, 187 goroutines, 100 MiB/82 MiB/138 MiB GO alloc/idle/total, 18 MiB/29 MiB CGO alloc/total, 869.9 CGO/sec, 3.4/0.9 %(u/s)time, 0.0 %gc (1x), 73 KiB/344 KiB (r/w)net
+I200528 03:29:47.357258 209 server/status/runtime.go:498  [n1] runtime stats: 174 MiB RSS, 187 goroutines, 107 MiB/75 MiB/138 MiB GO alloc/idle/total, 18 MiB/30 MiB CGO alloc/total, 168.6 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 59 KiB/688 KiB (r/w)net
+I200528 03:29:57.355454 209 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 200 goroutines, 80 MiB/88 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 7844.5 CGO/sec, 52.2/2.1 %(u/s)time, 0.0 %gc (12x), 367 KiB/970 KiB (r/w)net
+I200528 03:30:07.360583 209 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 193 goroutines, 112 MiB/69 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 537.3 CGO/sec, 2.5/0.8 %(u/s)time, 0.0 %gc (0x), 60 KiB/545 KiB (r/w)net
+I200528 03:30:17.365481 209 server/status/runtime.go:498  [n1] runtime stats: 182 MiB RSS, 193 goroutines, 64 MiB/97 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 25.9 CGO/sec, 1.2/0.6 %(u/s)time, 0.0 %gc (1x), 40 KiB/648 KiB (r/w)net
+I200528 03:30:27.284387 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:30:27.364229 209 server/status/runtime.go:498  [n1] runtime stats: 183 MiB RSS, 193 goroutines, 72 MiB/91 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 55.9 CGO/sec, 1.0/0.8 %(u/s)time, 0.0 %gc (0x), 38 KiB/364 KiB (r/w)net
+I200528 03:30:37.366805 209 server/status/runtime.go:498  [n1] runtime stats: 183 MiB RSS, 192 goroutines, 79 MiB/84 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 26.2 CGO/sec, 0.7/0.6 %(u/s)time, 0.0 %gc (0x), 39 KiB/491 KiB (r/w)net
+I200528 03:30:47.372744 209 server/status/runtime.go:498  [n1] runtime stats: 183 MiB RSS, 187 goroutines, 86 MiB/78 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 26.9 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 63 KiB/570 KiB (r/w)net
+I200528 03:30:57.375452 209 server/status/runtime.go:498  [n1] runtime stats: 184 MiB RSS, 187 goroutines, 93 MiB/72 MiB/151 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 31.7 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 42 KiB/474 KiB (r/w)net
+I200528 03:31:07.375493 209 server/status/runtime.go:498  [n1] runtime stats: 187 MiB RSS, 188 goroutines, 100 MiB/66 MiB/156 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 26.2 CGO/sec, 0.8/0.8 %(u/s)time, 0.0 %gc (0x), 40 KiB/564 KiB (r/w)net
+I200528 03:31:17.375508 209 server/status/runtime.go:498  [n1] runtime stats: 193 MiB RSS, 188 goroutines, 108 MiB/59 MiB/157 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 27.5 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 49 KiB/544 KiB (r/w)net
+I200528 03:31:27.287891 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:31:27.384042 209 server/status/runtime.go:498  [n1] runtime stats: 198 MiB RSS, 188 goroutines, 116 MiB/53 MiB/157 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 53.5 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 108 KiB/426 KiB (r/w)net
+I200528 03:31:37.373021 209 server/status/runtime.go:498  [n1] runtime stats: 203 MiB RSS, 187 goroutines, 67 MiB/94 MiB/157 MiB GO alloc/idle/total, 14 MiB/30 MiB CGO alloc/total, 26.9 CGO/sec, 1.1/0.7 %(u/s)time, 0.0 %gc (1x), 47 KiB/304 KiB (r/w)net
+I200528 03:31:47.370716 209 server/status/runtime.go:498  [n1] runtime stats: 203 MiB RSS, 187 goroutines, 75 MiB/87 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 23.6 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 42 KiB/271 KiB (r/w)net
+I200528 03:31:57.365202 209 server/status/runtime.go:498  [n1] runtime stats: 203 MiB RSS, 187 goroutines, 84 MiB/80 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 29.9 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 46 KiB/325 KiB (r/w)net
+I200528 03:32:07.373165 209 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 188 goroutines, 91 MiB/74 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 23.9 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 75 KiB/446 KiB (r/w)net
+I200528 03:32:17.373584 209 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 188 goroutines, 96 MiB/69 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 28.7 CGO/sec, 0.9/0.8 %(u/s)time, 0.0 %gc (0x), 42 KiB/542 KiB (r/w)net
+I200528 03:32:27.271824 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:32:27.374996 209 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 188 goroutines, 108 MiB/59 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 52.9 CGO/sec, 1.1/0.7 %(u/s)time, 0.0 %gc (0x), 104 KiB/490 KiB (r/w)net
+I200528 03:32:37.379769 209 server/status/runtime.go:498  [n1] runtime stats: 204 MiB RSS, 186 goroutines, 115 MiB/54 MiB/157 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 90.7 CGO/sec, 1.5/0.7 %(u/s)time, 0.0 %gc (0x), 44 KiB/577 KiB (r/w)net
+I200528 03:32:47.381245 209 server/status/runtime.go:498  [n1] runtime stats: 206 MiB RSS, 185 goroutines, 121 MiB/49 MiB/158 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 28.9 CGO/sec, 1.3/0.6 %(u/s)time, 0.0 %gc (1x), 42 KiB/449 KiB (r/w)net
+I200528 03:32:57.376958 209 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 186 goroutines, 73 MiB/89 MiB/158 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 31.2 CGO/sec, 1.1/0.7 %(u/s)time, 0.0 %gc (0x), 38 KiB/597 KiB (r/w)net
+I200528 03:33:07.379271 209 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 186 goroutines, 80 MiB/83 MiB/158 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 25.0 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 36 KiB/972 KiB (r/w)net
+I200528 03:33:17.379904 209 server/status/runtime.go:498  [n1] runtime stats: 207 MiB RSS, 188 goroutines, 87 MiB/77 MiB/158 MiB GO alloc/idle/total, 22 MiB/38 MiB CGO alloc/total, 28.7 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 36 KiB/602 KiB (r/w)net
+I200528 03:33:27.274998 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:33:27.387830 209 server/status/runtime.go:498  [n1] runtime stats: 246 MiB RSS, 194 goroutines, 107 MiB/138 MiB/182 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 8162.1 CGO/sec, 55.6/2.2 %(u/s)time, 0.0 %gc (12x), 196 KiB/844 KiB (r/w)net
+I200528 03:33:37.380847 209 server/status/runtime.go:498  [n1] runtime stats: 246 MiB RSS, 192 goroutines, 78 MiB/154 MiB/153 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 267.8 CGO/sec, 3.3/2.2 %(u/s)time, 0.0 %gc (1x), 217 KiB/698 KiB (r/w)net
+I200528 03:33:47.381124 209 server/status/runtime.go:498  [n1] runtime stats: 246 MiB RSS, 192 goroutines, 108 MiB/136 MiB/154 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 307.9 CGO/sec, 2.0/0.4 %(u/s)time, 0.0 %gc (0x), 120 KiB/926 KiB (r/w)net
+I200528 03:33:57.385455 209 server/status/runtime.go:498  [n1] runtime stats: 247 MiB RSS, 192 goroutines, 114 MiB/130 MiB/154 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 30.5 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 57 KiB/428 KiB (r/w)net
+I200528 03:34:07.389466 209 server/status/runtime.go:498  [n1] runtime stats: 247 MiB RSS, 193 goroutines, 64 MiB/160 MiB/156 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 24.3 CGO/sec, 0.8/0.3 %(u/s)time, 0.0 %gc (1x), 60 KiB/514 KiB (r/w)net
+I200528 03:34:17.398913 209 server/status/runtime.go:498  [n1] runtime stats: 247 MiB RSS, 188 goroutines, 73 MiB/152 MiB/156 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 26.7 CGO/sec, 0.9/0.5 %(u/s)time, 0.0 %gc (0x), 46 KiB/665 KiB (r/w)net
+I200528 03:34:27.273418 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:34:27.400086 209 server/status/runtime.go:498  [n1] runtime stats: 248 MiB RSS, 188 goroutines, 82 MiB/145 MiB/156 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 56.3 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 124 KiB/1.5 MiB (r/w)net
+I200528 03:34:37.404802 209 server/status/runtime.go:498  [n1] runtime stats: 248 MiB RSS, 187 goroutines, 89 MiB/139 MiB/156 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 21.8 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 53 KiB/1.1 MiB (r/w)net
+I200528 03:34:47.413884 209 server/status/runtime.go:498  [n1] runtime stats: 248 MiB RSS, 187 goroutines, 96 MiB/133 MiB/157 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 24.3 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 197 KiB/378 KiB (r/w)net
+I200528 03:34:57.415581 209 server/status/runtime.go:498  [n1] runtime stats: 248 MiB RSS, 187 goroutines, 104 MiB/126 MiB/160 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 101.9 CGO/sec, 1.4/0.7 %(u/s)time, 0.0 %gc (0x), 812 KiB/370 KiB (r/w)net
+I200528 03:35:07.419983 209 server/status/runtime.go:498  [n1] runtime stats: 249 MiB RSS, 188 goroutines, 111 MiB/120 MiB/165 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 26.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 63 KiB/334 KiB (r/w)net
+I200528 03:35:17.420811 209 server/status/runtime.go:498  [n1] runtime stats: 249 MiB RSS, 188 goroutines, 118 MiB/115 MiB/170 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 24.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 51 KiB/289 KiB (r/w)net
+I200528 03:35:27.274698 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:35:27.421264 209 server/status/runtime.go:498  [n1] runtime stats: 249 MiB RSS, 188 goroutines, 66 MiB/159 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 53.2 CGO/sec, 1.3/0.6 %(u/s)time, 0.0 %gc (1x), 270 KiB/335 KiB (r/w)net
+I200528 03:35:37.423747 209 server/status/runtime.go:498  [n1] runtime stats: 250 MiB RSS, 187 goroutines, 72 MiB/154 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 21.1 CGO/sec, 0.7/0.5 %(u/s)time, 0.0 %gc (0x), 117 KiB/306 KiB (r/w)net
+I200528 03:35:47.428890 209 server/status/runtime.go:498  [n1] runtime stats: 250 MiB RSS, 187 goroutines, 79 MiB/148 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 25.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 66 KiB/298 KiB (r/w)net
+I200528 03:35:57.427640 209 server/status/runtime.go:498  [n1] runtime stats: 250 MiB RSS, 187 goroutines, 87 MiB/142 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 30.8 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (0x), 16 MiB/637 KiB (r/w)net
+I200528 03:36:07.428616 209 server/status/runtime.go:498  [n1] runtime stats: 250 MiB RSS, 188 goroutines, 93 MiB/136 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 24.3 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 16 MiB/522 KiB (r/w)net
+I200528 03:36:17.433795 209 server/status/runtime.go:498  [n1] runtime stats: 251 MiB RSS, 188 goroutines, 101 MiB/129 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 25.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 36 KiB/269 KiB (r/w)net
+I200528 03:36:27.277943 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:36:27.438509 209 server/status/runtime.go:498  [n1] runtime stats: 251 MiB RSS, 188 goroutines, 109 MiB/123 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 54.5 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 36 KiB/278 KiB (r/w)net
+I200528 03:36:37.439945 209 server/status/runtime.go:498  [n1] runtime stats: 251 MiB RSS, 187 goroutines, 115 MiB/117 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 23.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 38 KiB/295 KiB (r/w)net
+I200528 03:36:47.444907 209 server/status/runtime.go:498  [n1] runtime stats: 251 MiB RSS, 187 goroutines, 122 MiB/111 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 25.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 35 KiB/268 KiB (r/w)net
+I200528 03:36:57.447194 209 server/status/runtime.go:498  [n1] runtime stats: 252 MiB RSS, 187 goroutines, 67 MiB/157 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 30.8 CGO/sec, 0.9/0.4 %(u/s)time, 0.0 %gc (1x), 37 KiB/280 KiB (r/w)net
+I200528 03:37:07.449798 209 server/status/runtime.go:498  [n1] runtime stats: 252 MiB RSS, 188 goroutines, 75 MiB/151 MiB/174 MiB GO alloc/idle/total, 21 MiB/37 MiB CGO alloc/total, 22.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 35 KiB/297 KiB (r/w)net
+I200528 03:37:17.454801 209 server/status/runtime.go:498  [n1] runtime stats: 252 MiB RSS, 188 goroutines, 83 MiB/144 MiB/174 MiB GO alloc/idle/total, 29 MiB/45 MiB CGO alloc/total, 31.2 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 40 KiB/292 KiB (r/w)net
+I200528 03:37:27.278772 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E200528 03:37:27.346738 336 kv/kvserver/queue.go:1204  [n1,replicate] 62 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I200528 03:37:27.458888 209 server/status/runtime.go:498  [n1] runtime stats: 253 MiB RSS, 188 goroutines, 92 MiB/138 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 56.5 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 118 KiB/301 KiB (r/w)net
+I200528 03:37:37.461079 209 server/status/runtime.go:498  [n1] runtime stats: 253 MiB RSS, 187 goroutines, 100 MiB/131 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 91.0 CGO/sec, 0.8/0.4 %(u/s)time, 0.0 %gc (0x), 44 KiB/307 KiB (r/w)net
+I200528 03:37:47.280770 203 kv/kvserver/store.go:2470  [n1,s1] sstables (read amplification = 0):
+I200528 03:37:47.281007 203 kv/kvserver/store.go:2471  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sum      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   0.0      0.0      0.0      0.00              0.00         0    0.000       0      0
+
+** Compaction Stats [default] **
+Priority    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) CompMergeCPU(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uptime(secs): 620.0 total, 600.0 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Interval compaction: 0.00 GB write, 0.00 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.0 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I200528 03:37:47.467207 209 server/status/runtime.go:498  [n1] runtime stats: 253 MiB RSS, 187 goroutines, 107 MiB/126 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 23.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 2.1 MiB/405 KiB (r/w)net
+I200528 03:37:57.466687 209 server/status/runtime.go:498  [n1] runtime stats: 253 MiB RSS, 187 goroutines, 114 MiB/119 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 34.6 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 59 KiB/297 KiB (r/w)net
+I200528 03:38:07.469731 209 server/status/runtime.go:498  [n1] runtime stats: 254 MiB RSS, 188 goroutines, 121 MiB/113 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 24.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 40 KiB/302 KiB (r/w)net
+I200528 03:38:17.473379 209 server/status/runtime.go:498  [n1] runtime stats: 254 MiB RSS, 188 goroutines, 66 MiB/158 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 28.1 CGO/sec, 1.4/0.6 %(u/s)time, 0.0 %gc (1x), 38 KiB/293 KiB (r/w)net
+I200528 03:38:27.278251 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:38:27.474774 209 server/status/runtime.go:498  [n1] runtime stats: 254 MiB RSS, 188 goroutines, 74 MiB/153 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 52.6 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 51 KiB/276 KiB (r/w)net
+I200528 03:38:37.469954 209 server/status/runtime.go:498  [n1] runtime stats: 254 MiB RSS, 187 goroutines, 81 MiB/147 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 23.6 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 25 MiB/666 KiB (r/w)net
+I200528 03:38:47.473281 209 server/status/runtime.go:498  [n1] runtime stats: 255 MiB RSS, 187 goroutines, 88 MiB/142 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 25.8 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 11 MiB/418 KiB (r/w)net
+I200528 03:38:57.476340 209 server/status/runtime.go:498  [n1] runtime stats: 255 MiB RSS, 187 goroutines, 95 MiB/135 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 27.0 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 2.4 MiB/1.1 MiB (r/w)net
+I200528 03:39:07.490904 209 server/status/runtime.go:498  [n1] runtime stats: 255 MiB RSS, 188 goroutines, 102 MiB/128 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 29.2 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 1.1 MiB/509 KiB (r/w)net
+I200528 03:39:17.488583 209 server/status/runtime.go:498  [n1] runtime stats: 255 MiB RSS, 186 goroutines, 110 MiB/122 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 22.0 CGO/sec, 0.9/0.7 %(u/s)time, 0.0 %gc (0x), 43 KiB/570 KiB (r/w)net
+I200528 03:39:27.279220 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:39:27.486766 209 server/status/runtime.go:498  [n1] runtime stats: 256 MiB RSS, 188 goroutines, 118 MiB/115 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 55.2 CGO/sec, 1.1/0.7 %(u/s)time, 0.0 %gc (0x), 45 KiB/573 KiB (r/w)net
+I200528 03:39:37.491318 209 server/status/runtime.go:498  [n1] runtime stats: 256 MiB RSS, 187 goroutines, 124 MiB/110 MiB/175 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 23.6 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 43 KiB/659 KiB (r/w)net
+I200528 03:39:38.865578 34175 sql/event_log.go:132  [n1,client=[::1]:56841,hostnossl,user=root] Event: "create_database", target: 59, info: {DatabaseName:crdb_uni Statement:CREATE DATABASE crdb_uni User:root}
+I200528 03:39:47.491799 209 server/status/runtime.go:498  [n1] runtime stats: 256 MiB RSS, 187 goroutines, 74 MiB/153 MiB/176 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 48.9 CGO/sec, 1.6/0.7 %(u/s)time, 0.0 %gc (1x), 3.7 MiB/527 KiB (r/w)net
+I200528 03:39:57.494776 209 server/status/runtime.go:498  [n1] runtime stats: 256 MiB RSS, 187 goroutines, 81 MiB/147 MiB/176 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 29.5 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 36 KiB/545 KiB (r/w)net
+I200528 03:40:07.488408 209 server/status/runtime.go:498  [n1] runtime stats: 257 MiB RSS, 188 goroutines, 89 MiB/141 MiB/176 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 92.2 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 50 KiB/443 KiB (r/w)net
+I200528 03:40:17.495696 209 server/status/runtime.go:498  [n1] runtime stats: 257 MiB RSS, 188 goroutines, 97 MiB/134 MiB/176 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 30.2 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 41 KiB/314 KiB (r/w)net
+I200528 03:40:24.120403 34175 sql/event_log.go:132  [n1,client=[::1]:56841,hostnossl,user=root] Event: "create_table", target: 60, info: {TableName:crdb_uni.public.students Statement:CREATE TABLE students (id UUID PRIMARY KEY DEFAULT gen_random_uuid(), name STRING) User:root}
+I200528 03:40:24.121729 35400 kv/kvserver/replica_command.go:397  [n1,split,s1,r38/1:/{Table/58-Max}] initiating a split of this range at key /Table/60 [r63] (zone config)
+I200528 03:40:27.279990 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:40:27.500715 209 server/status/runtime.go:498  [n1] runtime stats: 257 MiB RSS, 189 goroutines, 105 MiB/128 MiB/176 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 119.5 CGO/sec, 1.3/0.8 %(u/s)time, 0.0 %gc (0x), 156 KiB/557 KiB (r/w)net
+I200528 03:40:37.505397 209 server/status/runtime.go:498  [n1] runtime stats: 258 MiB RSS, 187 goroutines, 63 MiB/162 MiB/174 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 226.2 CGO/sec, 2.4/0.8 %(u/s)time, 0.0 %gc (1x), 41 KiB/544 KiB (r/w)net
+I200528 03:40:43.552829 34175 sql/event_log.go:132  [n1,client=[::1]:56841,hostnossl,user=root] Event: "create_table", target: 61, info: {TableName:crdb_uni.public.courses Statement:CREATE TABLE courses (sys_id UUID DEFAULT gen_random_uuid(), course_id INT8, name STRING, PRIMARY KEY (sys_id, course_id)) User:root}
+I200528 03:40:43.554457 35972 kv/kvserver/replica_command.go:397  [n1,split,s1,r63/1:/{Table/60-Max}] initiating a split of this range at key /Table/61 [r64] (zone config)
+I200528 03:40:47.510953 209 server/status/runtime.go:498  [n1] runtime stats: 258 MiB RSS, 187 goroutines, 71 MiB/156 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 87.2 CGO/sec, 2.5/2.7 %(u/s)time, 0.0 %gc (0x), 47 KiB/533 KiB (r/w)net
+I200528 03:40:53.320663 34175 sql/table.go:991  [n1,client=[::1]:56841,hostnossl,user=root] queued new schema change job 558913464958582785 for table 61, mutation 1
+I200528 03:40:53.320679 34175 sql/sqlbase/structured.go:1554  [n1,client=[::1]:56841,hostnossl,user=root] publish: descID=61 (courses) version=2 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:40:53.323203 34175 sql/event_log.go:132  [n1,client=[::1]:56841,hostnossl,user=root] Event: "alter_table", target: 61, info: {TableName:crdb_uni.public.courses Statement:ALTER TABLE courses ADD COLUMN schedule STRING User:root MutationID:1 CascadeDroppedViews:[]}
+I200528 03:40:53.323220 34175 jobs/registry.go:285  [n1,client=[::1]:56841,hostnossl,user=root] scheduled jobs [558913464958582785]
+I200528 03:40:53.332893 338 jobs/registry.go:1187  job 558913464958582785: resuming execution
+I200528 03:40:53.333875 36260 jobs/registry.go:806  [n1] job 558913464958582785: stepping through state running with error <nil>
+I200528 03:40:53.334028 36260 sql/schema_changer.go:418  [n1,job=558913464958582785,scExec] schema change on courses (61 v2) mutation 1 starting execution...
+I200528 03:40:53.337163 36260 sql/sqlbase/structured.go:1554  [n1,job=558913464958582785,scExec] publish: descID=61 (courses) version=3 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:40:53.339306 36260 sql/schema_changer.go:706  [n1,job=558913464958582785,scExec] waiting for a single version of table 61...
+I200528 03:40:53.340470 36260 sql/schema_changer.go:708  [n1,job=558913464958582785,scExec] waiting for a single version of table 61... done (at v 3)
+I200528 03:40:53.347520 36260 sql/backfill.go:171  [n1,job=558913464958582785,scExec] Running backfill for "courses", v=3, m=1
+I200528 03:40:53.347550 36260 sql/backfill.go:287  [n1,job=558913464958582785,scExec] Completed backfill for "courses", v=3, m=1
+I200528 03:40:53.348970 36260 sql/sqlbase/structured.go:1554  [n1,job=558913464958582785,scExec] publish: descID=61 (courses) version=4 mtime=1970-01-01 00:00:00 +0000 UTC
+I200528 03:40:53.350776 36260 sql/event_log.go:132  [n1,job=558913464958582785,scExec] Event: "finish_schema_change", target: 61, info: {MutationID:1}
+I200528 03:40:53.350793 36260 sql/schema_changer.go:706  [n1,job=558913464958582785,scExec] waiting for a single version of table 61...
+I200528 03:40:53.352130 36260 sql/schema_changer.go:708  [n1,job=558913464958582785,scExec] waiting for a single version of table 61... done (at v 4)
+I200528 03:40:53.352149 36260 jobs/registry.go:806  [n1] job 558913464958582785: stepping through state succeeded with error <nil>
+I200528 03:40:53.355850 36260 jobs/registry.go:961  [n1] job 558913464958582785: status succeeded after adoption finished
+I200528 03:40:57.510769 209 server/status/runtime.go:498  [n1] runtime stats: 258 MiB RSS, 187 goroutines, 111 MiB/135 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 545.6 CGO/sec, 3.3/0.9 %(u/s)time, 0.0 %gc (0x), 46 KiB/1.2 MiB (r/w)net
+I200528 03:41:07.511437 209 server/status/runtime.go:498  [n1] runtime stats: 258 MiB RSS, 188 goroutines, 118 MiB/128 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 23.9 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 36 KiB/354 KiB (r/w)net
+I200528 03:41:17.516334 209 server/status/runtime.go:498  [n1] runtime stats: 259 MiB RSS, 188 goroutines, 66 MiB/159 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 26.0 CGO/sec, 1.4/0.6 %(u/s)time, 0.0 %gc (1x), 36 KiB/276 KiB (r/w)net
+I200528 03:41:27.281436 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:41:27.520487 209 server/status/runtime.go:498  [n1] runtime stats: 259 MiB RSS, 189 goroutines, 74 MiB/153 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 66.9 CGO/sec, 1.0/0.6 %(u/s)time, 0.0 %gc (0x), 54 KiB/301 KiB (r/w)net
+I200528 03:41:27.640319 37650 jobs/registry.go:806  [n1] job 558913577394012161: stepping through state running with error <nil>
+I200528 03:41:27.653898 37650 jobs/registry.go:806  [n1] job 558913577394012161: stepping through state succeeded with error <nil>
+I200528 03:41:27.657744 37650 jobs/registry.go:961  [n1] job 558913577394012161: status succeeded after adoption finished
+I200528 03:41:27.666166 37568 jobs/registry.go:806  [n1] job 558913577489465345: stepping through state running with error <nil>
+I200528 03:41:27.682644 37568 jobs/registry.go:806  [n1] job 558913577489465345: stepping through state succeeded with error <nil>
+I200528 03:41:27.685447 37568 jobs/registry.go:961  [n1] job 558913577489465345: status succeeded after adoption finished
+I200528 03:41:37.521045 209 server/status/runtime.go:498  [n1] runtime stats: 259 MiB RSS, 187 goroutines, 90 MiB/143 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 209.3 CGO/sec, 1.5/0.7 %(u/s)time, 0.0 %gc (0x), 110 KiB/285 KiB (r/w)net
+I200528 03:41:47.524956 209 server/status/runtime.go:498  [n1] runtime stats: 259 MiB RSS, 187 goroutines, 98 MiB/136 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 25.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 49 KiB/736 KiB (r/w)net
+I200528 03:41:57.531257 209 server/status/runtime.go:498  [n1] runtime stats: 260 MiB RSS, 187 goroutines, 105 MiB/130 MiB/161 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 28.6 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 73 KiB/55 KiB (r/w)net
+I200528 03:42:07.531161 209 server/status/runtime.go:498  [n1] runtime stats: 260 MiB RSS, 188 goroutines, 112 MiB/124 MiB/162 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 30.8 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 75 KiB/26 KiB (r/w)net
+I200528 03:42:17.532895 209 server/status/runtime.go:498  [n1] runtime stats: 260 MiB RSS, 188 goroutines, 118 MiB/118 MiB/166 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 22.9 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 10 KiB/11 KiB (r/w)net
+I200528 03:42:27.282155 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:42:27.537271 209 server/status/runtime.go:498  [n1] runtime stats: 260 MiB RSS, 188 goroutines, 65 MiB/161 MiB/171 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 55.7 CGO/sec, 1.5/0.7 %(u/s)time, 0.0 %gc (1x), 16 KiB/16 KiB (r/w)net
+I200528 03:42:37.536639 209 server/status/runtime.go:498  [n1] runtime stats: 261 MiB RSS, 187 goroutines, 74 MiB/155 MiB/171 MiB GO alloc/idle/total, 29 MiB/46 MiB CGO alloc/total, 108.6 CGO/sec, 1.4/0.7 %(u/s)time, 0.0 %gc (0x), 69 KiB/102 KiB (r/w)net
+I200528 03:42:47.537494 209 server/status/runtime.go:498  [n1] runtime stats: 261 MiB RSS, 187 goroutines, 81 MiB/150 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 26.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 50 KiB/52 KiB (r/w)net
+I200528 03:42:57.536977 209 server/status/runtime.go:498  [n1] runtime stats: 261 MiB RSS, 187 goroutines, 88 MiB/144 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 31.0 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 23 KiB/20 KiB (r/w)net
+I200528 03:43:07.540244 209 server/status/runtime.go:498  [n1] runtime stats: 261 MiB RSS, 188 goroutines, 95 MiB/137 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 24.1 CGO/sec, 0.8/0.5 %(u/s)time, 0.0 %gc (0x), 74 KiB/110 KiB (r/w)net
+I200528 03:43:17.546350 209 server/status/runtime.go:498  [n1] runtime stats: 262 MiB RSS, 188 goroutines, 101 MiB/132 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 29.5 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 16 KiB/17 KiB (r/w)net
+I200528 03:43:27.286678 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:43:27.547920 209 server/status/runtime.go:498  [n1] runtime stats: 262 MiB RSS, 188 goroutines, 110 MiB/124 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 54.0 CGO/sec, 1.0/0.7 %(u/s)time, 0.0 %gc (0x), 107 KiB/41 KiB (r/w)net
+I200528 03:43:37.546744 209 server/status/runtime.go:498  [n1] runtime stats: 262 MiB RSS, 187 goroutines, 117 MiB/118 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 26.0 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (0x), 45 KiB/46 KiB (r/w)net
+I200528 03:43:47.548809 209 server/status/runtime.go:498  [n1] runtime stats: 262 MiB RSS, 187 goroutines, 64 MiB/161 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 25.3 CGO/sec, 1.3/0.6 %(u/s)time, 0.0 %gc (1x), 56 KiB/1.2 MiB (r/w)net
+I200528 03:43:57.549373 209 server/status/runtime.go:498  [n1] runtime stats: 263 MiB RSS, 187 goroutines, 71 MiB/155 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 29.9 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 48 KiB/545 KiB (r/w)net
+I200528 03:44:07.546640 209 server/status/runtime.go:498  [n1] runtime stats: 263 MiB RSS, 188 goroutines, 78 MiB/149 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 22.0 CGO/sec, 0.5/0.4 %(u/s)time, 0.0 %gc (0x), 1.4 MiB/466 KiB (r/w)net
+I200528 03:44:17.551855 209 server/status/runtime.go:498  [n1] runtime stats: 263 MiB RSS, 188 goroutines, 85 MiB/143 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 25.9 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 1.7 MiB/536 KiB (r/w)net
+I200528 03:44:27.281311 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:44:27.554451 209 server/status/runtime.go:498  [n1] runtime stats: 263 MiB RSS, 188 goroutines, 93 MiB/137 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 50.3 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 617 KiB/600 KiB (r/w)net
+I200528 03:44:37.559134 209 server/status/runtime.go:498  [n1] runtime stats: 264 MiB RSS, 187 goroutines, 99 MiB/132 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 26.2 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 3.6 MiB/890 KiB (r/w)net
+I200528 03:44:47.564287 209 server/status/runtime.go:498  [n1] runtime stats: 264 MiB RSS, 187 goroutines, 106 MiB/125 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 27.4 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (0x), 3.4 MiB/812 KiB (r/w)net
+I200528 03:44:57.568700 209 server/status/runtime.go:498  [n1] runtime stats: 264 MiB RSS, 187 goroutines, 113 MiB/120 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 24.7 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 3.2 MiB/856 KiB (r/w)net
+I200528 03:45:07.569162 209 server/status/runtime.go:498  [n1] runtime stats: 264 MiB RSS, 188 goroutines, 122 MiB/113 MiB/171 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 108.7 CGO/sec, 0.9/0.4 %(u/s)time, 0.0 %gc (0x), 3.8 MiB/756 KiB (r/w)net
+I200528 03:45:17.576118 209 server/status/runtime.go:498  [n1] runtime stats: 265 MiB RSS, 188 goroutines, 69 MiB/157 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 25.7 CGO/sec, 1.0/0.3 %(u/s)time, 0.0 %gc (1x), 333 KiB/306 KiB (r/w)net
+I200528 03:45:27.279537 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:45:27.576382 209 server/status/runtime.go:498  [n1] runtime stats: 265 MiB RSS, 188 goroutines, 77 MiB/152 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 55.1 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 36 KiB/564 KiB (r/w)net
+I200528 03:45:37.577313 209 server/status/runtime.go:498  [n1] runtime stats: 265 MiB RSS, 187 goroutines, 83 MiB/146 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 28.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 42 KiB/281 KiB (r/w)net
+I200528 03:45:47.576851 209 server/status/runtime.go:498  [n1] runtime stats: 265 MiB RSS, 187 goroutines, 90 MiB/140 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 25.9 CGO/sec, 0.7/0.4 %(u/s)time, 0.0 %gc (0x), 39 KiB/352 KiB (r/w)net
+I200528 03:45:57.590511 209 server/status/runtime.go:498  [n1] runtime stats: 266 MiB RSS, 187 goroutines, 97 MiB/134 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 24.7 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 136 KiB/888 KiB (r/w)net
+I200528 03:46:07.590465 209 server/status/runtime.go:498  [n1] runtime stats: 266 MiB RSS, 188 goroutines, 105 MiB/127 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 24.3 CGO/sec, 0.8/0.7 %(u/s)time, 0.0 %gc (0x), 46 KiB/283 KiB (r/w)net
+I200528 03:46:17.590106 209 server/status/runtime.go:498  [n1] runtime stats: 266 MiB RSS, 188 goroutines, 111 MiB/121 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 29.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 50 KiB/298 KiB (r/w)net
+I200528 03:46:27.283299 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I200528 03:46:27.587621 209 server/status/runtime.go:498  [n1] runtime stats: 266 MiB RSS, 188 goroutines, 119 MiB/115 MiB/172 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 53.3 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 160 KiB/307 KiB (r/w)net
+I200528 03:46:37.593969 209 server/status/runtime.go:498  [n1] runtime stats: 266 MiB RSS, 187 goroutines, 65 MiB/160 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 24.1 CGO/sec, 1.1/0.4 %(u/s)time, 0.0 %gc (1x), 3.4 MiB/650 KiB (r/w)net
+I200528 03:46:47.589497 209 server/status/runtime.go:498  [n1] runtime stats: 267 MiB RSS, 187 goroutines, 72 MiB/155 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 23.4 CGO/sec, 0.5/0.4 %(u/s)time, 0.0 %gc (0x), 1.0 MiB/369 KiB (r/w)net
+I200528 03:46:57.595567 209 server/status/runtime.go:498  [n1] runtime stats: 267 MiB RSS, 187 goroutines, 79 MiB/149 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 30.8 CGO/sec, 0.6/0.4 %(u/s)time, 0.0 %gc (0x), 2.3 MiB/532 KiB (r/w)net
+I200528 03:47:07.592324 209 server/status/runtime.go:498  [n1] runtime stats: 267 MiB RSS, 188 goroutines, 86 MiB/143 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 26.2 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 3.3 MiB/652 KiB (r/w)net
+I200528 03:47:17.602721 209 server/status/runtime.go:498  [n1] runtime stats: 267 MiB RSS, 188 goroutines, 92 MiB/137 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 27.8 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 3.2 MiB/867 KiB (r/w)net
+I200528 03:47:27.282334 204 gossip/gossip.go:567  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E200528 03:47:27.349970 336 kv/kvserver/queue.go:1204  [n1,replicate] 64 replicas failing with "0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"
+I200528 03:47:27.604984 209 server/status/runtime.go:498  [n1] runtime stats: 268 MiB RSS, 188 goroutines, 103 MiB/131 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 135.8 CGO/sec, 1.8/0.8 %(u/s)time, 0.0 %gc (0x), 3.6 MiB/3.4 MiB (r/w)net
+I200528 03:47:37.606977 209 server/status/runtime.go:498  [n1] runtime stats: 268 MiB RSS, 187 goroutines, 109 MiB/125 MiB/174 MiB GO alloc/idle/total, 37 MiB/54 MiB CGO alloc/total, 28.1 CGO/sec, 0.8/0.6 %(u/s)time, 0.0 %gc (0x), 3.8 MiB/942 KiB (r/w)net
+I200528 03:47:45.816325 1 cli/start.go:919  received signal 'interrupt'
+I200528 03:47:45.826551 1 cli/start.go:1006  initiating graceful shutdown of server
+I200528 03:47:45.855554 42700 server/drain.go:173  [server drain process] drain remaining: 12
+I200528 03:47:45.864874 42700 server/drain.go:175  [server drain process] drain details: table leases: 11, liveness record: 1
+E200528 03:47:46.029664 1 cli/start.go:1041  received signal 'interrupt' during shutdown, initiating hard shutdown - node may take longer to restart & clients may need to wait for leases to expire
